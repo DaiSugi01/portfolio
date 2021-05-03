@@ -2,7 +2,7 @@ import Layout from "../components/Layout"
 
 const AboutMe = () => {
   return (
-    <Layout title="Projects">
+    <Layout title="Projects"> 
       <p>Projects</p>
     </Layout>
   )

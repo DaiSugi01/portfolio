@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "type": "programming",
+  "logo": "/avatar.jpg",
+  "title": "Back-end",
+  "comment": "I like to make complecated problems simple and solve it. Since I have exper",
+  "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"]
+}

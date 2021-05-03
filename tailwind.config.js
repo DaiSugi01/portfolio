@@ -4,7 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'main-background': '#212529',
+        'main': '#212529',
+        'sub-main': '#282D32',
+      },
+      height: {
+        'main': 'calc(100vh - 3.5rem)',
+        '400vh': '400vh',
+      },
+      minHeight: {
+        'main': 'calc(100vh - 3.5rem)',
+      },
+      width: {
+        'main': 'calc(100vw - 8rem)',
       }
     },
   },

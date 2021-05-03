@@ -1,0 +1,7 @@
+{
+  "id": 3,
+  "type": "other",
+  "logo": "/avatar.jpg",
+  "title": "Database",
+  "language": ["Microsoft SQL Server", "DB2"]
+}

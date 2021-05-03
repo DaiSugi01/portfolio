@@ -1,0 +1,8 @@
+{
+  "id": 0,
+  "type": "programming",
+  "logo": "/avatar.jpg",
+  "title": "iOS",
+  "comment": "I am passionate about iOS development. Smartphone is essential for our life that's why I would like to make life easier by developing apps.",
+  "language": ["Swift", "Objective-C"]
+}
