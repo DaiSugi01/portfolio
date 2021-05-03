@@ -4,5 +4,7 @@
   "logo": "/avatar.jpg",
   "title": "Back-end",
   "comment": "I like to make complecated problems simple and solve it. Since I have exper",
-  "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"]
+  "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"],
+  "database": ["Microsoft SQL Server", "DB2", "MySQL"],
+  "infrastructure": ["AWS"]
 }

@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function Card({ content }) {
-
   return (
     <div className="bg-white text-center shadow-xl p-8 w-2/6 rounded text-gray-600">
       <div>
@@ -22,8 +21,30 @@ export default function Card({ content }) {
         <p className="">{content.comment}</p>
         <p className="mt-3 text-blue-500 text-2xl">Language</p>
         {content.language.map((language) => (
-          <p keys={language} className="mt-2 text-gray-600">{language}</p>
+          <p keys={language} className="mt-2 text-gray-600">
+            {language}
+          </p>
         ))}
+
+        {content.database && (
+          <p className="mt-3 text-blue-500 text-2xl">Database</p>
+        )}
+        {content.database &&
+          content.database.map((db) => (
+            <p keys={db} className="mt-2 text-gray-600">
+              {db}
+            </p>
+          ))}
+
+        {content.infrastructure && (
+          <p className="mt-3 text-blue-500 text-2xl">Infrastructure</p>
+        )}
+        {content.infrastructure &&
+          content.infrastructure.map((infra) => (
+            <p keys={infra} className="mt-2 text-gray-600">
+              {infra}
+            </p>
+          ))}
       </div>
     </div>
   );
