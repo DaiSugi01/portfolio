@@ -4,8 +4,14 @@ import styled from "styled-components";
 import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
 
+const Wrapper = styled.section`
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem 0;
+`
+
+
 const Title = styled.h2`
-  margin-top: 4rem;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
@@ -39,7 +45,7 @@ export default function Project({ projects }) {
   };
 
   return (
-    <section className="h-full w-full pb-10 bg-main">
+    <Wrapper className="bg-main">
       <div>
         <Title>Projects</Title>
         <UnderLine></UnderLine>
@@ -62,6 +68,6 @@ export default function Project({ projects }) {
             ))}
         </CardWrapper>
       </div>
-    </section>
+    </Wrapper>
   );
 }

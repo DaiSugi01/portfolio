@@ -15,7 +15,7 @@ module.exports = {
         'main': 'calc(100vh - 3.5rem)',
       },
       width: {
-        'main': 'calc(100vw - 8rem)',
+        'main': 'calc(100vw - 5rem)',
       }
     },
   },

@@ -7,7 +7,7 @@ export default function Header() {
     fontSize: 45
   }
   return (
-    <nav className="w-32 min-h-screen bg-gray-800 fixed top-0 z-20">
+    <nav className="w-20 min-h-screen bg-gray-800 fixed top-0 z-20">
       <div className="flex flex-col items-center min-h-screen">
         <a
           href="https://github.com/DaiSugi01"
