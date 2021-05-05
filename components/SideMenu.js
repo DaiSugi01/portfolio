@@ -4,7 +4,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 
 export default function Header() {
   const iconSize = {
-    fontSize: 45
+    fontSize: 30
   }
   return (
     <nav className="w-20 min-h-screen bg-gray-800 fixed top-0 z-20">
