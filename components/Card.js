@@ -19,7 +19,7 @@ export default function Card({ content }) {
 
       <div className="mt-4 text-xl">
         <p className="">{content.comment}</p>
-        <p className="mt-3 text-blue-500 text-2xl">Language / Framework / Library</p>
+        <p className="mt-3 text-blue-500 text-2xl">Languages</p>
         {content.language.map((language) => (
           <p keys={language} className="mt-2 text-gray-600">
             {language}
