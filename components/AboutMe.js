@@ -13,18 +13,24 @@ const Profile = styled.h2`
   width: 58.333333%;
 `;
 
+const SkillCards = styled.h2`
+  margin: auto;
+  margin-top: 6rem;
+  width: 93%;
+`;
+
 export default function AboutMe({ programming, others }) {
 
   return (
     <section className="h-full w-full bg-sub-main pb-20">
-      <div className="w-full block">
+      {/* <div className="w-full block"> */}
         <Greet className="font-bold text-4xl text-center">{profile.greet}</Greet>
         <Profile className="text-center text-xl">{profile.aboutMe}</Profile>
-      </div>
+      {/* </div> */}
 
-      <div className="mt-24 flex m-auto" style={ {width: "91.666667%"} }>
+      <SkillCards className="flex">
         {programming && programming.map(skill => <Card key={skill.id} content={skill}/>)}
-      </div>
+      </SkillCards>
 
     </section>
   );
