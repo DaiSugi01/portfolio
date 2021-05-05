@@ -1,0 +1,11 @@
+{
+  "id": 0,
+  "type": "web",
+  "appName": "Recipefy",
+  "discription": "Recipe search web app",
+  "contributor": "Ayumi Tanaka",
+  "techStack": ["Java", "JavaEE", "Servlet and JSP"],
+  "thumbnail": "/images/recipefy.png",
+  "url": "https://recipe-fy.herokuapp.com/",
+  "github": "https://github.com/DaiSugi01/recipefy"
+}

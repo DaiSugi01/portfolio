@@ -1,7 +1,7 @@
 {
   "id": 2,
   "type": "programming",
-  "logo": "/avatar.jpg",
+  "logo": "/images/avatar.jpg",
   "title": "Front-end",
   "comment": "I like to code things from scratch, and enjoy bringing ideas to life in the browser.",
   "language": ["HTML", "CSS", "JavaScript", "React", "Next.js", "ActionScript"]
