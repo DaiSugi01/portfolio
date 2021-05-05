@@ -22,10 +22,12 @@ const UnderLine = styled.div`
 
 const CardWrapper = styled.div`
   display: flex;
-  width: 80%;
+  width: 95%;
   align-items: center;
   margin: 0 auto;
   margin-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export default function Project({ projects }) {
@@ -37,8 +39,8 @@ export default function Project({ projects }) {
   };
 
   return (
-    <section className="h-screen w-full">
-      <div className="h-main w-full">
+    <section className="h-full w-full pb-10 bg-main">
+      <div>
         <Title>Projects</Title>
         <UnderLine></UnderLine>
 
