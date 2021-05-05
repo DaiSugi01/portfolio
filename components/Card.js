@@ -1,8 +1,16 @@
+import styled from 'styled-components';
+
 import Image from "next/image";
+
+const CardWrapper = styled.div`
+  margin-right: 0.25rem;
+  width: 33%;
+  padding: 2rem;
+`
 
 export default function Card({ content }) {
   return (
-    <div className="bg-white text-center shadow-xl p-8 mr-1 w-2/6 rounded text-gray-600">
+    <CardWrapper className="bg-white text-center shadow-xl rounded text-gray-600">
       <div>
         <Image
           className="rounded-full"
@@ -21,7 +29,7 @@ export default function Card({ content }) {
         <p className="">{content.comment}</p>
         <p className="mt-3 text-blue-500 text-2xl">Languages</p>
         {content.language.map((language) => (
-          <p keys={language} className="mt-2 text-gray-600">
+          <p key={language} className="mt-2 text-gray-600">
             {language}
           </p>
         ))}
@@ -31,7 +39,7 @@ export default function Card({ content }) {
         )}
         {content.database &&
           content.database.map((db) => (
-            <p keys={db} className="mt-2 text-gray-600">
+            <p key={db} className="mt-2 text-gray-600">
               {db}
             </p>
           ))}
@@ -41,11 +49,11 @@ export default function Card({ content }) {
         )}
         {content.infrastructure &&
           content.infrastructure.map((infra) => (
-            <p keys={infra} className="mt-2 text-gray-600">
+            <p key={infra} className="mt-2 text-gray-600">
               {infra}
             </p>
           ))}
       </div>
-    </div>
+    </CardWrapper>
   );
 }

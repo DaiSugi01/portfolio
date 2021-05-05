@@ -21,7 +21,5 @@ export default function Filter ({ text, onActive, active }) {
     <Button onClick={onActive} style={{...styles}}>
       {text}
     </Button>
-    // <div className="text-2xl text-center cursor-pointer" onClick={onActive} style={{...styles}}>
-    // </div>
   )  
 }

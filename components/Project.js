@@ -1,14 +1,15 @@
 import { useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import Filter from "../components/Filter";
+import ProjectCard from "../components/ProjectCard";
 
-const Title = styled.h2 `
+const Title = styled.h2`
   margin-top: 4rem;
   font-size: 3rem;
   line-height: 1;
   text-align: center;
-`
+`;
 
 const UnderLine = styled.div`
   border-style: solid;
@@ -16,17 +17,25 @@ const UnderLine = styled.div`
   width: 4rem;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgba(255, 255, 255, var(--tw-border-opacity));	
-`
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+`;
 
-export default function Project() {
+const CardWrapper = styled.div`
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+`;
+
+export default function Project({ projects }) {
   const [activeIndex, setActive] = useState(0);
-  const filters = ['All', 'Web', 'iOS']
+  const filters = ["All", "Web", "iOS"];
 
-  const onChangeActive = active => {
+  const onChangeActive = (active) => {
     setActive(active);
   };
-  
+
   return (
     <section className="h-screen w-full">
       <div className="h-main w-full">
@@ -43,6 +52,13 @@ export default function Project() {
             />
           ))}
         </div>
+
+        <CardWrapper>
+          {projects &&
+            projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+        </CardWrapper>
       </div>
     </section>
   );

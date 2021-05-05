@@ -5,14 +5,15 @@ import Top from "../components/Top";
 import AboutMe from "../components/AboutMe";
 import Project from "../components/Project";
 import { getAllSkills } from "../lib/getSkills";
+import { getAllProjects } from '../lib/getProjects';
 
-export default function Home({ programming, others }) {
+export default function Home({ programming, projects }) {
 
   return (
     <Layout title="Home">
       <Top />
-      <AboutMe programming={programming} others={others}/>
-      <Project />
+      <AboutMe programming={programming}/>
+      <Project projects={projects}/>
 
       <div className="h-screen w-full bg-sub-main">
         <Link href="/about-me">
@@ -27,9 +28,9 @@ export default function Home({ programming, others }) {
 export async function getStaticProps() {
   const skills = await getAllSkills();
   const programming = skills.filter( skill => skill.type == "programming")
-  const others = skills.filter( skill => skill.type == "other")
 
+  const projects = await getAllProjects();
   return {
-    props: { programming, others }
+    props: { programming, projects }
   };
 }
