@@ -1,19 +1,31 @@
+import styled from 'styled-components';
+
 import Card from "../components/Card";
 import profile from "../data/profile.json";
+
+const Greet = styled.h1`
+  margin-top: 4rem;
+`;
+
+const Profile = styled.h2`
+  margin: auto;
+  margin-top: 2.5rem;
+  width: 58.333333%;
+`;
 
 export default function AboutMe({ programming, others }) {
 
   return (
-    <div className="h-full w-full bg-sub-main pb-20">
+    <section className="h-full w-full bg-sub-main pb-20">
       <div className="w-full block">
-        <h1 className="font-bold text-4xl text-center mt-16">{profile.greet}</h1>
-        <h2 className="mt-10 text-center m-auto text-xl" style={ {width: "58.333333%"} }>{profile.aboutMe}</h2>
+        <Greet className="font-bold text-4xl text-center">{profile.greet}</Greet>
+        <Profile className="text-center text-xl">{profile.aboutMe}</Profile>
       </div>
 
       <div className="mt-24 flex m-auto" style={ {width: "91.666667%"} }>
         {programming && programming.map(skill => <Card key={skill.id} content={skill}/>)}
       </div>
 
-    </div>
+    </section>
   );
 }
