@@ -1,6 +1,11 @@
-import Image from "next/image";
+// import { GitHubIcon, LinkedInIcon } from '@material-ui/icons';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 export default function Header() {
+  const iconSize = {
+    fontSize: 45
+  }
   return (
     <nav className="w-32 min-h-screen bg-gray-800 fixed top-0 z-20">
       <div className="flex flex-col items-center min-h-screen">
@@ -10,13 +15,7 @@ export default function Header() {
           rel="noopener noreferrer"
           className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
         >
-          <Image
-            className="fill-current"
-            src="/github.svg"
-            width={40}
-            height={40}
-            alt="github"
-          />
+          <GitHubIcon style={{fill: "white"}, { fontSize: iconSize.fontSize }}/>
         </a>
 
         <a
@@ -25,26 +24,20 @@ export default function Header() {
           rel="noopener noreferrer"
           className="border-white text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
         >
-          <Image
-            className="fill-current"
-            src="/linkedin.svg"
-            width={30}
-            height={30}
-            alt="github"
-          />
+          <LinkedInIcon style={{fill: "white"}, { fontSize: iconSize.fontSize }}/>
         </a>
 
         <a
           href="mailto:volble124@gmail.com"
           className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
         >
-          <Image
+          {/* <Image
             className="fill-current"
             src="/mail.svg"
             width={30}
             height={30}
             alt="github"
-          />
+          /> */}
         </a>
       </div>
     </nav>

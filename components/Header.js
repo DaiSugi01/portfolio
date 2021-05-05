@@ -28,7 +28,7 @@ export default function Header() {
             <a href="tel:volble124@gmail.com">
               <Image
                 className="px-3 py-2"
-                src="/phone.svg"
+                src="/images/phone.svg"
                 width={30}
                 height={30}
                 alt="phone"

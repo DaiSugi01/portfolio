@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Card({ content }) {
   return (
-    <div className="bg-white text-center shadow-xl p-8 w-2/6 rounded text-gray-600">
+    <div className="bg-white text-center shadow-xl p-8 mr-1 w-2/6 rounded text-gray-600">
       <div>
         <Image
           className="rounded-full"
@@ -19,7 +19,7 @@ export default function Card({ content }) {
 
       <div className="mt-4 text-xl">
         <p className="">{content.comment}</p>
-        <p className="mt-3 text-blue-500 text-2xl">Language</p>
+        <p className="mt-3 text-blue-500 text-2xl">Language / Framework / Library</p>
         {content.language.map((language) => (
           <p keys={language} className="mt-2 text-gray-600">
             {language}
