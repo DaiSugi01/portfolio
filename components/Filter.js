@@ -1,13 +1,27 @@
+import styled from 'styled-components';
+
+const Button = styled.div`
+  margin: 2.5rem 5rem 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 10rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+`
+
 export default function Filter ({ text, onActive, active }) {
   
   const styles = {
-    width: "10rem",
     backgroundColor: active ? "#E31C6E" : '' 
   }
 
   return (
-    <div className="mt-10 mx-20 py-2 text-2xl text-center cursor-pointer" onClick={onActive} style={{...styles}}>
+    <Button onClick={onActive} style={{...styles}}>
       {text}
-    </div>
+    </Button>
+    // <div className="text-2xl text-center cursor-pointer" onClick={onActive} style={{...styles}}>
+    // </div>
   )  
 }

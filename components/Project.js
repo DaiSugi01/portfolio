@@ -3,8 +3,20 @@ import styled from 'styled-components';
 
 import Filter from "../components/Filter";
 
-const projectSec = styled.section `
+const Title = styled.h2 `
+  margin-top: 4rem;
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
+`
 
+const UnderLine = styled.div`
+  border-style: solid;
+  margin: 20px auto 16px;
+  width: 4rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));	
 `
 
 export default function Project() {
@@ -18,8 +30,8 @@ export default function Project() {
   return (
     <section className="h-screen w-full">
       <div className="h-main w-full">
-        <p className="text-5xl text-center mt-16">Projects</p>
-        <div className="mx-auto mt-4 mb-16 border-solid w-16 border-white border-2"></div>
+        <Title>Projects</Title>
+        <UnderLine></UnderLine>
 
         <div className="flex justify-center text-gray-300 items-center w-full">
           {filters.map((buttonName, i) => (
