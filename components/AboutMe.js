@@ -8,6 +8,7 @@ const Greet = styled.h1`
   font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  text-align: center;
 `;
 
 const Profile = styled.h2`
