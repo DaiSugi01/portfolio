@@ -52,16 +52,5 @@
     "thumbnail": "/images/recipefy.png",
     "url": "https://recipe-fy.herokuapp.com/",
     "github": "https://github.com/DaiSugi01/recipefy"
-  },
-  {
-    "id": 5,
-    "type": "Web",
-    "appName": "Recipefy",
-    "discription": "Recipe search web app.",
-    "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP"],
-    "thumbnail": "/images/recipefy.png",
-    "url": "https://recipe-fy.herokuapp.com/",
-    "github": "https://github.com/DaiSugi01/recipefy"
   }
 ]
