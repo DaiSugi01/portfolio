@@ -3,26 +3,12 @@ import styled from "styled-components";
 
 import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
-
-const Wrapper = styled.section`
-  height: 100%;
-  width: 100%;
-  padding: 2.5rem 0;
-`
+import { Wrapper, UnderLine } from "../components/Common";
 
 const Title = styled.h2`
   font-size: 3rem;
   line-height: 1;
   text-align: center;
-`;
-
-const UnderLine = styled.div`
-  border-style: solid;
-  margin: 20px auto 16px;
-  width: 4rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
 `;
 
 const CardWrapper = styled.div`
@@ -41,9 +27,13 @@ export default function Project({ projects }) {
   const filters = ["All", "Web", "iOS"];
 
   const onChangeActive = (active) => {
+    if (activeIndex === active) {
+      return;
+    }
+
     setActiveIndex(active);
-    if (filters[active] !== 'All') {
-      const newProjects = projects.filter(p => p.type === filters[active]);
+    if (filters[active] !== "All") {
+      const newProjects = projects.filter((p) => p.type === filters[active]);
       setProjects([...newProjects]);
     } else {
       setProjects([...projects]);

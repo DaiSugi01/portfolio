@@ -1,11 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import Card from "../components/Card";
 import profile from "../data/profile.json";
-
-const Wrapper = styled.section`
-  padding: 2.5rem 0;
-`
+import { Wrapper } from "../components/Common";
 
 const Greet = styled.h1`
   font-weight: 700;
@@ -32,16 +29,15 @@ const SkillCards = styled.h2`
 `;
 
 export default function AboutMe({ programming }) {
-
   return (
     <Wrapper className="bg-sub-main">
       <Greet>{profile.greet}</Greet>
       <Profile>{profile.aboutMe}</Profile>
 
       <SkillCards className="flex">
-        {programming && programming.map(skill => <Card key={skill.id} content={skill}/>)}
+        {programming &&
+          programming.map((skill) => <Card key={skill.id} content={skill} />)}
       </SkillCards>
-
     </Wrapper>
   );
 }

@@ -50,7 +50,13 @@ export default function ProjectCard({ project }) {
           {project.contributor && "Developed with "}
           {project.contributor &&
             project.contributor.map((c) => (
-              <a className="underline font-bold" key={c.id} href={c.url}>
+              <a 
+              key={c.id}
+              href={c.url}
+              className="underline font-bold"
+              target="_blank"
+              rel="noopener noreferrer"    
+              >
                 {c.name}
               </a>
             ))}
