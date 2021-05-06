@@ -26,8 +26,9 @@ const Profile = styled.h2`
 
 const SkillCards = styled.h2`
   margin: auto;
-  margin-top: 6rem;
+  margin-top: 3rem;
   width: 93%;
+  flex-wrap: wrap;
 `;
 
 export default function AboutMe({ programming }) {

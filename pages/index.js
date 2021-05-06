@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Top from "../components/Top";
 import AboutMe from "../components/AboutMe";
 import Project from "../components/Project";
+import Contact from "../components/Contact";
 import { getAllSkills } from "../lib/getSkills";
 import { getAllProjects } from '../lib/getProjects';
 
@@ -14,13 +15,14 @@ export default function Home({ programming, projects }) {
       <Top />
       <AboutMe programming={programming}/>
       <Project projects={projects}/>
+      <Contact />
 
-      <div className="h-screen w-full bg-sub-main">
+      {/* <div className="h-screen w-full bg-sub-main">
         <Link href="/about-me">
           <div className="h-main w-full">
           </div>
         </Link>
-      </div>
+      </div> */}
     </Layout>
   );
 }

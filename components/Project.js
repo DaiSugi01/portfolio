@@ -37,23 +37,17 @@ const CardWrapper = styled.div`
 
 export default function Project({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [filteredProjects, setProjects] = useState([...projects])
+  const [filteredProjects, setProjects] = useState([...projects]);
   const filters = ["All", "Web", "iOS"];
 
   const onChangeActive = (active) => {
     setActiveIndex(active);
     if (filters[active] !== 'All') {
-      console.log("not all")
-      const newProjects = projects.filter(p => p.type === filters[active])
-      console.log(newProjects)
-      setProjects(newProjects)
+      const newProjects = projects.filter(p => p.type === filters[active]);
+      setProjects([...newProjects]);
     } else {
-      console.log("all")
-      setProjects([...projects])
+      setProjects([...projects]);
     }
-    console.log(projects)
-    console.log(filteredProjects)
-    setProjects();
   };
 
   return (
@@ -74,8 +68,8 @@ export default function Project({ projects }) {
         </div>
 
         <CardWrapper>
-          {projects &&
-            projects.map((project) => (
+          {filteredProjects &&
+            filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
         </CardWrapper>

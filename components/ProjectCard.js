@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -10,7 +9,11 @@ import Typography from "@material-ui/core/Typography";
 
 const TechStacks = styled.span`
   color: #e31b6d;
-`
+`;
+
+const contributor = styled.a`
+
+`;
 
 const useStyles = makeStyles({
   root: {
@@ -46,18 +49,22 @@ export default function ProjectCard({ project }) {
         <Typography variant="body3" color="textSecondary" component="p">
           {project.contributor && "Developed with "}
           {project.contributor &&
-            project.contributor.map(c => <a href={c.url}>{c.name}</a>)}
+            project.contributor.map((c) => (
+              <a className="underline font-bold" key={c.id} href={c.url}>
+                {c.name}
+              </a>
+            ))}
         </Typography>
         <Typography variant="body4" color="textSecondary" component="p">
           <TechStacks>
-            {project.techStack && project.techStack.map((tech, i) => {
-              if (i === project.techStack.length - 1) {
-                return tech
-              } else {
-                return tech + ', '
-              }
-            }
-            )}
+            {project.techStack &&
+              project.techStack.map((tech, i) => {
+                if (i === project.techStack.length - 1) {
+                  return tech;
+                } else {
+                  return tech + ", ";
+                }
+              })}
           </TechStacks>
         </Typography>
       </CardContent>
