@@ -10,7 +10,6 @@ const Wrapper = styled.section`
   padding: 2.5rem 0;
 `
 
-
 const Title = styled.h2`
   font-size: 3rem;
   line-height: 1;
@@ -37,11 +36,24 @@ const CardWrapper = styled.div`
 `;
 
 export default function Project({ projects }) {
-  const [activeIndex, setActive] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [filteredProjects, setProjects] = useState([...projects])
   const filters = ["All", "Web", "iOS"];
 
   const onChangeActive = (active) => {
-    setActive(active);
+    setActiveIndex(active);
+    if (filters[active] !== 'All') {
+      console.log("not all")
+      const newProjects = projects.filter(p => p.type === filters[active])
+      console.log(newProjects)
+      setProjects(newProjects)
+    } else {
+      console.log("all")
+      setProjects([...projects])
+    }
+    console.log(projects)
+    console.log(filteredProjects)
+    setProjects();
   };
 
   return (
