@@ -1,7 +1,7 @@
 {
   "id": 0,
   "type": "programming",
-  "logo": "/images/avatar.jpg",
+  "logo": "/images/skills/ios.svg",
   "title": "iOS",
   "comment": "I am passionate about iOS development. Smartphone is essential for our life that's why I would like to make life easier by developing apps.",
   "language": ["Swift", "Realm", "Objective-C"]

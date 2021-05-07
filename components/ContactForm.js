@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const stylesForGrid = {
   width: "500px",
-  backgroundColor: "rgba(229, 231, 235, var(--tw-bg-opacity))",
+  backgroundColor: "#E5E7EB",
   marginBottom: "0.1rem",
 };
 

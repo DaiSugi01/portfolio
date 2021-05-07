@@ -1,10 +1,10 @@
 {
   "id": 1,
   "type": "programming",
-  "logo": "/images/avatar.jpg",
+  "logo": "/images/skills/backend.png",
   "title": "Back-end",
   "comment": "I like to make complecated problems simple and solve it. Since I have exper",
   "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"],
-  "database": ["Microsoft SQL Server", "DB2", "MySQL"],
-  "infrastructure": ["AWS (SAA Expires Jun 2022)"]
+  "database": ["Microsoft SQL Server", "DB2", "MySQL", "Amazon DynamoDB"],
+  "infrastructure": ["AWS (SAA Expires Jun 2022)", "Firebase", "Heroku"]
 }

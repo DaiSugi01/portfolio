@@ -20,13 +20,14 @@ const useStyles = makeStyles({
   },
 });
 
+const styles = {
+  width: "350px",
+  margin: "5px",
+  backgroundColor: "#E5E7EB",
+};
+
 export default function ProjectCard({ project }) {
   const classes = useStyles();
-
-  const styles = {
-    width: "350px",
-    margin: "5px",
-  };
 
   return (
     <Card className={classes.root} style={{ ...styles }}>
@@ -46,12 +47,12 @@ export default function ProjectCard({ project }) {
           {project.contributor && "Developed with "}
           {project.contributor &&
             project.contributor.map((c) => (
-              <a 
-              key={c.name}
-              href={c.url}
-              className="underline font-bold"
-              target="_blank"
-              rel="noopener noreferrer"    
+              <a
+                key={c.name}
+                href={c.url}
+                className="underline font-bold"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {c.name}
               </a>

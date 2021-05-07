@@ -7,18 +7,18 @@ const CardWrapper = styled.div`
   margin-right: 0.25rem;
   width: 32%;
   padding: 2rem;
+  background-color: #E5E7EB;
 `
 
 export default function Card({ content }) {
   return (
-    <CardWrapper className="bg-white text-center shadow-xl rounded text-gray-600">
+    <CardWrapper className="text-center shadow-xl rounded text-gray-600">
       <div>
         <Image
-          className="rounded-full"
           src={content.logo}
           width={60}
           height={60}
-          alt="Avatar"
+          alt="skill"
         />
       </div>
 
