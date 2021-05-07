@@ -3,7 +3,7 @@
   "type": "programming",
   "logo": "/images/skills/backend.png",
   "title": "Back-end",
-  "comment": "I like to make complecated problems simple and solve it. Since I have exper",
+  "comment": "I like to make complecated problems simple and solve it. A backend journey is going to be a long way but I really love this kind of things.",
   "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"],
   "database": ["Microsoft SQL Server", "DB2", "MySQL", "Amazon DynamoDB"],
   "infrastructure": ["AWS (SAA Expires Jun 2022)", "Firebase", "Heroku"]

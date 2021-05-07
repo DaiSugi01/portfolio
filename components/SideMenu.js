@@ -26,19 +26,6 @@ export default function Header() {
         >
           <LinkedInIcon style={{fill: "white"}, { fontSize: iconSize.fontSize }}/>
         </a>
-
-        <a
-          href="mailto:volble124@gmail.com"
-          className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-        >
-          {/* <Image
-            className="fill-current"
-            src="/mail.svg"
-            width={30}
-            height={30}
-            alt="github"
-          /> */}
-        </a>
       </div>
     </nav>
   );

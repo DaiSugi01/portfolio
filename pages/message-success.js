@@ -16,7 +16,7 @@ const AboutMe = () => {
     <div className="h-full">
       <div className="align-center text-center m-auto mt-16">
         <Image
-          src="/images/mailbox.svg"
+          src="/images/contacts/mailbox.svg"
           width={250}
           height={250}
           alt="Mailbox"
