@@ -10,10 +10,9 @@ const Title = styled.h2`
 `;
 
 const Text = styled.p`
-  color: #04C1C8;
   font-size: 1.1rem;
   text-align: center;
-  margin: 1rem auto 3rem;
+  margin: 2rem auto 3rem;
   font-weight: 400;
 `;
 
@@ -21,6 +20,7 @@ export default function Contact() {
   return (
     <Wrapper className="bg-sub-main">
       <Title>Contact</Title>
+      <UnderLine />
       <Text>Thanks for taking your time to reach me out!</Text>
       <ContactForm />
     </Wrapper>

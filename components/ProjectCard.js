@@ -11,10 +11,6 @@ const TechStacks = styled.span`
   color: #e31b6d;
 `;
 
-const contributor = styled.a`
-
-`;
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -51,7 +47,7 @@ export default function ProjectCard({ project }) {
           {project.contributor &&
             project.contributor.map((c) => (
               <a 
-              key={c.id}
+              key={c.name}
               href={c.url}
               className="underline font-bold"
               target="_blank"
