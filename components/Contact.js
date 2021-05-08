@@ -89,7 +89,7 @@ export default function Contact() {
           </SnsIcon>
         </SnsWrapper>
 
-        <a href="phone:2368887246">
+        <a href="tel:2368887246">
         <ContactInfo>
           <Image
             className="px-3 py-2"
