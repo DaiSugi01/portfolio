@@ -1,8 +1,12 @@
+import { useState } from "react";
+import Router from "next/router";
 import { TextField, Input } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
+import fetch from "node-fetch";
 
-import { getAllPostsData } from "../lib/posts";
+import { baseUrl } from "../lib/commonInfo";
+import CircularIndeterminate from "../components/CircularProgress";
 
 const stylesForGrid = {
   width: "500px",
@@ -15,7 +19,7 @@ const stylesForSubmit = {
   padding: "5px 30px",
   color: "white",
   fontSize: "1.3rem",
-  display: "inline-block"
+  display: "inline-block",
 };
 
 const SubmitWrapper = styled.div`
@@ -26,17 +30,64 @@ const SubmitWrapper = styled.div`
 `;
 
 export default function ContactForm() {
+  const [isLoading, setLoading] = useState(false);
+  const [isError, setError] = useState(false);
+
+  let submit = (
+    <SubmitWrapper>
+      <Input type="submit" value="Submit" style={{ ...stylesForSubmit }} />
+    </SubmitWrapper>
+  );
+
+  if (isLoading) {
+    submit = <CircularIndeterminate />;
+  }
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(e)
-    let res = await getAllPostsData().then(
-      console.log("OK")
-    ).catch(
-      
-    )
-    console.log(res);
-  }
+
+    const email = e.target.MailAddress.value;
+    const content = e.target.Contact.value;
+
+    if (!formValidation(email)) {
+      setError(true);
+      return;
+    }
+
+    setLoading(true);
+    setError(false);
+    fetch(new URL(baseUrl + "/sendemail"), {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        message: content,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response issue");
+        }
+        Router.push("/message-success");
+      })
+      .catch((err) => {
+        setLoading(false);
+        setError(true);
+        console.log("Error: " + err);
+      });
+  };
+
+  const formValidation = (email) => {
+    const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!regex.test(email)) {
+      console.log("format error");
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   return (
     <Grid container alignItems="center" justify="center">
@@ -64,13 +115,9 @@ export default function ContactForm() {
           />
         </Grid>
 
-        <SubmitWrapper>
-          <Input
-            type='submit'
-            value='Submit'
-            style={{ ...stylesForSubmit }}
-          />
-        </SubmitWrapper>
+        {isError ? <p className="text-center">Oops! Something went wrong. Plase try again</p> : ""}
+        { submit }
+
       </form>
     </Grid>
   );
