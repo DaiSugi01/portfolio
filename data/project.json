@@ -5,7 +5,7 @@
     "appName": "Recipefy",
     "discription": "Recipe search web app.",
     "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP"],
+    "techStack": ["Java", "JavaEE", "Servlet and JSP", "MySQL", "Heroku"],
     "thumbnail": "/images/projects/recipefy.png",
     "url": "https://recipe-fy.herokuapp.com/",
     "github": "https://github.com/DaiSugi01/recipefy"

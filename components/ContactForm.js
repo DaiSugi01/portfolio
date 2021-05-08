@@ -2,6 +2,8 @@ import { TextField, Input } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import styled from "styled-components";
 
+import { getAllPostsData } from "../lib/posts";
+
 const stylesForGrid = {
   width: "500px",
   backgroundColor: "#E5E7EB",
@@ -27,7 +29,13 @@ export default function ContactForm() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(e);
+    console.log(e)
+    let res = await getAllPostsData().then(
+      console.log("OK")
+    ).catch(
+      
+    )
+    console.log(res);
   }
 
   return (
