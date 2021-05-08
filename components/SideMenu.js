@@ -4,7 +4,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { SnsIcon } from "../components/Common";
 
 const styles = {
-  fontSize: 30,
+  fontSize: 45,
 };
 
 const Navigation = styled.nav`
@@ -18,9 +18,7 @@ const Navigation = styled.nav`
   justify-content: space-between;
 
   @media (max-width: 799px) {
-    .sideNav {
-      display: none;
-    }
+    display: none;
   }
 `;
 
@@ -35,34 +33,36 @@ const Logo = styled.div`
   font-weight: 700;
 `;
 
+const SnsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.25rem;
+`;
+
 export default function SideMenu() {
   return (
-    // <nav className="w-20 min-h-full max-h-screen bg-gray-800 fixed top-0 z-20 flex flex-col justify-between">
-    <Navigation>
-      <div className="sideNav">
-        <div className="bg-gray-800">
-          <Logo>DS</Logo>
-          <div className="flex flex-col items-center">
-            <SnsIcon
-              href="https://github.com/DaiSugi01"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 px-3 py-2 rounded"
-            >
-              <GitHubIcon style={{ ...styles }} />
-            </SnsIcon>
+    <Navigation className="bg-gray-800">
+      <Logo>DS</Logo>
+      <SnsWrapper className="flex flex-col items-center mb-5">
+        <SnsIcon
+          href="https://github.com/DaiSugi01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-300 px-3 py-2 rounded"
+        >
+          <GitHubIcon style={{ ...styles }} />
+        </SnsIcon>
 
-            <SnsIcon
-              href="https://www.linkedin.com/in/daiki-sugihara-97b7b7150/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-white text-gray-300 px-3 py-2 rounded"
-            >
-              <LinkedInIcon style={{ ...styles }} />
-            </SnsIcon>
-          </div>
-        </div>
-      </div>
+        <SnsIcon
+          href="https://www.linkedin.com/in/daiki-sugihara-97b7b7150/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border-white text-gray-300 px-3 py-2 rounded"
+        >
+          <LinkedInIcon style={{ ...styles }} />
+        </SnsIcon>
+      </SnsWrapper>
     </Navigation>
   );
 }
