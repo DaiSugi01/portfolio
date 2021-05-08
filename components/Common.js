@@ -14,3 +14,9 @@ export const Wrapper = styled.section`
   width: 100%;
   padding: 2.5rem 0;
 `;
+
+export const SnsIcon = styled.a`
+  &:hover {
+    color: #C58753;
+  }
+`;

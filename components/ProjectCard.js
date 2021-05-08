@@ -1,15 +1,21 @@
 import styled from "styled-components";
+import { SnsIcon } from "../components/Common";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const TechStacks = styled.span`
   color: #e31b6d;
 `;
+
+const iconStyles = {
+  fontSize: 35
+};
 
 const styles = {
   width: "350px",
@@ -72,12 +78,16 @@ export default function ProjectCard({ project }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        {project.url && (
+          <SnsIcon href={project.github} target="_blank" rel="noopener noreferrer">
+            <ArrowForwardIcon style={{...iconStyles}}/>
+          </SnsIcon>
+        )}
+        {project.github && (
+          <SnsIcon href={project.github} target="_blank" rel="noopener noreferrer">
+            <GitHubIcon  style={{...iconStyles}}/>
+          </SnsIcon>
+        )}
       </CardActions>
     </Card>
   );
