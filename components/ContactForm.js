@@ -12,6 +12,7 @@ const stylesForGrid = {
   width: "500px",
   backgroundColor: "#E5E7EB",
   marginBottom: "0.1rem",
+  maxWidth: "100%",
 };
 
 const stylesForSubmit = {

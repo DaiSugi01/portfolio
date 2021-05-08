@@ -11,6 +11,13 @@ const Title = styled.h2`
   text-align: center;
 `;
 
+const FilterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+`;
+
 const CardWrapper = styled.div`
   display: flex;
   width: 95%;
@@ -46,7 +53,8 @@ export default function Project({ projects }) {
         <Title>Projects</Title>
         <UnderLine></UnderLine>
 
-        <div className="flex justify-center text-gray-300 items-center w-full">
+        {/* <div className="flex justify-center text-gray-300 items-center "> */}
+        <FilterWrapper>
           {filters.map((buttonName, i) => (
             <Filter
               key={i}
@@ -55,8 +63,7 @@ export default function Project({ projects }) {
               active={i === activeIndex}
             />
           ))}
-        </div>
-
+        </FilterWrapper>
         <CardWrapper>
           {filteredProjects &&
             filteredProjects.map((project) => (

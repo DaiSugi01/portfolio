@@ -9,6 +9,10 @@ const Button = styled.div`
   font-size: 1.5rem;
   line-height: 2rem;
   text-align: center;
+
+  @media (max-width: 799px) {
+    margin: 0;
+  }
 `;
 
 export default function Filter({ text, onActive, active }) {

@@ -9,6 +9,7 @@ const Greet = styled.h1`
   font-size: 2.25rem;
   line-height: 2.5rem;
   text-align: center;
+  padding: 0 1rem;
 `;
 
 const Profile = styled.h2`
@@ -39,7 +40,7 @@ export default function AboutMe({ programming }) {
       <Greet>{profile.greet}</Greet>
       <Profile>{profile.aboutMe}</Profile>
 
-      <SkillCards className="flex">
+      <SkillCards className="flex justify-center">
         {programming &&
           programming.map((skill) => <Card key={skill.id} content={skill} />)}
       </SkillCards>

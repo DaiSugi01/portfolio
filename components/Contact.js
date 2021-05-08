@@ -2,7 +2,18 @@ import styled from "styled-components";
 import Image from "next/image";
 
 import ContactForm from "../components/ContactForm";
-import { Wrapper, UnderLine } from "../components/Common";
+import { UnderLine } from "../components/Common";
+
+const Wrapper = styled.section`
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem 0;
+  @media (max-width: 799px) {
+    .contact-form {
+      display: none;
+    }
+  }
+`;
 
 const Title = styled.h2`
   font-size: 3rem;
@@ -35,8 +46,10 @@ export default function Contact() {
     <Wrapper className="bg-sub-main">
       <Title>Contact</Title>
       <UnderLine />
-      <Text>Thanks for taking your time to reach me out!</Text>
-      <ContactForm />
+      <div className="contact-form">
+        <Text>Thanks for taking your time to reach me out!</Text>
+        <ContactForm/>
+      </div>
 
       <ContactInfoWrapper>
         <ContactInfo>

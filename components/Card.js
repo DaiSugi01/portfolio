@@ -5,6 +5,7 @@ import Image from "next/image";
 const CardWrapper = styled.div`
   margin-top: 1rem;
   margin-right: 0.25rem;
+  min-width: 320px;
   width: 32%;
   padding: 2rem;
   background-color: #e5e7eb;
