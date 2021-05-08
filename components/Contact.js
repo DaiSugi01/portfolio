@@ -1,8 +1,15 @@
-import styled from "styled-components";
 import Image from "next/image";
+import styled from "styled-components";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { SnsIcon } from "../components/Common";
 
 import ContactForm from "../components/ContactForm";
 import { UnderLine } from "../components/Common";
+
+const styles = {
+  fontSize: 40,
+};
 
 const Wrapper = styled.section`
   height: 100%;
@@ -41,17 +48,43 @@ const ContactInfo = styled.div`
   margin-top: 0.5rem;
 `;
 
+const SnsWrapper = styled.div`
+  @media (min-width: 799px) {
+    display: none;
+  }
+`;
+
 export default function Contact() {
   return (
     <Wrapper className="bg-sub-main">
       <Title>Contact</Title>
       <UnderLine />
+      <Text>Thanks for taking your time to reach me out!</Text>
       <div className="contact-form">
-        <Text>Thanks for taking your time to reach me out!</Text>
-        <ContactForm/>
+        <ContactForm />
       </div>
 
       <ContactInfoWrapper>
+        <SnsWrapper>
+          <SnsIcon
+            href="https://github.com/DaiSugi01"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 px-3 py-2 rounded"
+          >
+            <GitHubIcon style={{ ...styles }} />
+          </SnsIcon>
+
+          <SnsIcon
+            href="https://www.linkedin.com/in/daiki-sugihara-97b7b7150/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-white text-gray-300 px-3 py-2 rounded"
+          >
+            <LinkedInIcon style={{ ...styles }} />
+          </SnsIcon>
+        </SnsWrapper>
+
         <ContactInfo>
           <Image
             className="px-3 py-2"
