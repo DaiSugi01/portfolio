@@ -17,40 +17,7 @@
     "discription": "iOS app to manage Cryptocurrencies.",
     "contributor": [{"name": "Yuki Tsukada", "url": "https://github.com/YukiT1990"}],
     "techStack": ["Swift"],
-    "thumbnail": "/images/cryptocurrencyManager.png",
+    "thumbnail": "/images/projects/cryptocurrencyManager.png",
     "github": "https://github.com/DaiSugi01/CryptocurrencyManagement"
-  },
-  {
-    "id": 2,
-    "type": "Web",
-    "appName": "Recipefy",
-    "discription": "Recipe search web app.",
-    "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP"],
-    "thumbnail": "/images/projects/recipefy.png",
-    "url": "https://recipe-fy.herokuapp.com/",
-    "github": "https://github.com/DaiSugi01/recipefy"
-  },
-  {
-    "id": 3,
-    "type": "Web",
-    "appName": "Recipefy",
-    "discription": "Recipe search web app.",
-    "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP"],
-    "thumbnail": "/images/projects/recipefy.png",
-    "url": "https://recipe-fy.herokuapp.com/",
-    "github": "https://github.com/DaiSugi01/recipefy"
-  },
-  {
-    "id": 4,
-    "type": "Web",
-    "appName": "Recipefy",
-    "discription": "Recipe search web app.",
-    "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP"],
-    "thumbnail": "/images/projects/recipefy.png",
-    "url": "https://recipe-fy.herokuapp.com/",
-    "github": "https://github.com/DaiSugi01/recipefy"
   }
 ]
