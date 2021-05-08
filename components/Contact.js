@@ -52,7 +52,7 @@ const SnsWrapper = styled.div`
   text-align: center;
   align-items: center;
   margin: auto;
-  
+
   @media (min-width: 799px) {
     display: none;
   }
@@ -89,6 +89,7 @@ export default function Contact() {
           </SnsIcon>
         </SnsWrapper>
 
+        <a href="phone:2368887256">
         <ContactInfo>
           <Image
             className="px-3 py-2"
@@ -99,15 +100,16 @@ export default function Contact() {
           />
           <p className="px-2 py-2 text-xl">+1 (236) 888 7246</p>
         </ContactInfo>
+        </a>
 
-        <a href="tel:volble124@gmail.com">
+        <a href="mailto:volble124@gmail.com">
           <ContactInfo>
             <Image
               className="px-3 py-2"
               src="/images/contacts/mail.svg"
               width={25}
               height={25}
-              alt="main"
+              alt="mail"
             />
             <p className="px-2 py-2 text-xl">volble124@gmail.com</p>
           </ContactInfo>
