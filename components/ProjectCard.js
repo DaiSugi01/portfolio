@@ -11,6 +11,12 @@ const TechStacks = styled.span`
   color: #e31b6d;
 `;
 
+const styles = {
+  width: "350px",
+  margin: "5px",
+  backgroundColor: "#E5E7EB",
+};
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -19,12 +25,6 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
-
-const styles = {
-  width: "350px",
-  margin: "5px",
-  backgroundColor: "#E5E7EB",
-};
 
 export default function ProjectCard({ project }) {
   const classes = useStyles();

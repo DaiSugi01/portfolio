@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Button = styled.div`
   margin: 2.5rem 5rem 0;
@@ -9,17 +9,16 @@ const Button = styled.div`
   font-size: 1.5rem;
   line-height: 2rem;
   text-align: center;
-`
+`;
 
-export default function Filter ({ text, onActive, active }) {
-  
+export default function Filter({ text, onActive, active }) {
   const styles = {
-    backgroundColor: active ? "#E31C6E" : '' 
-  }
+    backgroundColor: active ? "#E31C6E" : "",
+  };
 
   return (
-    <Button onClick={onActive} style={{...styles}}>
+    <Button onClick={onActive} style={{ ...styles }}>
       {text}
     </Button>
-  )  
+  );
 }

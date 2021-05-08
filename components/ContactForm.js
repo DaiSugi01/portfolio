@@ -115,9 +115,14 @@ export default function ContactForm() {
           />
         </Grid>
 
-        {isError ? <p className="text-center">Oops! Something went wrong. Plase try again</p> : ""}
-        { submit }
-
+        {isError ? (
+          <p className="text-center text-red-500 font-bold">
+            Oops! Something went wrong. Plase try again
+          </p>
+        ) : (
+          ""
+        )}
+        {submit}
       </form>
     </Grid>
   );

@@ -1,11 +1,11 @@
-// import { GitHubIcon, LinkedInIcon } from '@material-ui/icons';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 export default function Header() {
   const iconSize = {
-    fontSize: 30
-  }
+    fontSize: 30,
+  };
+
   return (
     <nav className="w-20 min-h-screen bg-gray-800 fixed top-0 z-20">
       <div className="flex flex-col items-center min-h-screen">
@@ -15,7 +15,9 @@ export default function Header() {
           rel="noopener noreferrer"
           className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
         >
-          <GitHubIcon style={{fill: "white"}, { fontSize: iconSize.fontSize }}/>
+          <GitHubIcon
+            style={({ fill: "white" }, { fontSize: iconSize.fontSize })}
+          />
         </a>
 
         <a
@@ -24,7 +26,9 @@ export default function Header() {
           rel="noopener noreferrer"
           className="border-white text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
         >
-          <LinkedInIcon style={{fill: "white"}, { fontSize: iconSize.fontSize }}/>
+          <LinkedInIcon
+            style={({ fill: "white" }, { fontSize: iconSize.fontSize })}
+          />
         </a>
       </div>
     </nav>

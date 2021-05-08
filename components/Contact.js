@@ -33,7 +33,6 @@ const ContactInfo = styled.div`
 export default function Contact() {
   return (
     <Wrapper className="bg-sub-main">
-
       <Title>Contact</Title>
       <UnderLine />
       <Text>Thanks for taking your time to reach me out!</Text>

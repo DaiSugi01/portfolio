@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import Image from "next/image";
 
@@ -7,19 +7,14 @@ const CardWrapper = styled.div`
   margin-right: 0.25rem;
   width: 32%;
   padding: 2rem;
-  background-color: #E5E7EB;
-`
+  background-color: #e5e7eb;
+`;
 
 export default function Card({ content }) {
   return (
     <CardWrapper className="text-center shadow-xl rounded text-gray-600">
       <div>
-        <Image
-          src={content.logo}
-          width={60}
-          height={60}
-          alt="skill"
-        />
+        <Image src={content.logo} width={60} height={60} alt="skill" />
       </div>
 
       <div className="mt-4">

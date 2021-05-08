@@ -10,7 +10,7 @@ export const UnderLine = styled.div`
 `;
 
 export const Wrapper = styled.section`
-height: 100%;
-width: 100%;
-padding: 2.5rem 0;
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem 0;
 `;
