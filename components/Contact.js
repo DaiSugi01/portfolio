@@ -49,6 +49,10 @@ const ContactInfo = styled.div`
 `;
 
 const SnsWrapper = styled.div`
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  
   @media (min-width: 799px) {
     display: none;
   }
