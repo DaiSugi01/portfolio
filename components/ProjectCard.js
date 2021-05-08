@@ -79,7 +79,7 @@ export default function ProjectCard({ project }) {
       </CardContent>
       <CardActions>
         {project.url && (
-          <SnsIcon href={project.github} target="_blank" rel="noopener noreferrer">
+          <SnsIcon href={project.url} target="_blank" rel="noopener noreferrer">
             <ArrowForwardIcon style={{...iconStyles}}/>
           </SnsIcon>
         )}
