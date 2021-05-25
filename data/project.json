@@ -19,5 +19,14 @@
     "techStack": ["Swift"],
     "thumbnail": "/images/projects/cryptocurrencyManager.png",
     "github": "https://github.com/DaiSugi01/CryptocurrencyManagement"
+  },
+  {
+    "id": 2,
+    "type": "iOS",
+    "appName": "Mov-Fi",
+    "discription": "iOS app to find out new movies.",
+    "techStack": ["Swift"],
+    "thumbnail": "/images/projects/mov.png",
+    "github": "https://github.com/DaiSugi01/swift_assignment/tree/main/Unit6/assignment8/CollectionView/CollectionView"
   }
 ]
