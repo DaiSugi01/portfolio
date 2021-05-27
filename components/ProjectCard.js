@@ -55,6 +55,7 @@ export default function ProjectCard({ project }) {
                 className="underline font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
+                alt="contributor"
               >
                 {c.name}
               </a>
