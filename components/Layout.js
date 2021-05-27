@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styled from "styled-components";
 
 import Header from "./SideMenu";
@@ -37,12 +36,10 @@ const CustomMain = styled.main`
   }
 `;
 
-export default function Layout({ children, title = "Daiki Sugihara" }) {
+export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
   return (
     <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <Header />
       <CustomHeader>
         <Nav className="nav">
           <Header />

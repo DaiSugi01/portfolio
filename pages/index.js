@@ -8,7 +8,7 @@ import { getAllProjects } from "../lib/getProjects";
 
 export default function Home({ programming, projects }) {
   return (
-    <Layout title="Home">
+    <Layout>
       <Top />
       <AboutMe programming={programming} />
       <Project projects={projects} />
