@@ -89,7 +89,10 @@ export default function Contact() {
           </SnsIcon>
         </SnsWrapper>
 
-        <a href="tel:+1-236-888-7246">
+        <a 
+          href="tel:+1-236-888-7246"
+          aria-label="phone"
+        >
         <ContactInfo>
           <Image
             className="px-3 py-2"
@@ -102,7 +105,10 @@ export default function Contact() {
         </ContactInfo>
         </a>
 
-        <a href="mailto:volble124@gmail.com">
+        <a 
+          href="mailto:volble124@gmail.com"
+          aria-label="mail"
+        >
           <ContactInfo>
             <Image
               className="px-3 py-2"
