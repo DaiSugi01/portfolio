@@ -4,10 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Image from "next/image";
 
 const TechStacks = styled.span`
   color: #e31b6d;
@@ -37,11 +37,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <Card className={classes.root} style={{ ...styles }}>
-      <CardMedia
-        className={classes.media}
-        image={project.thumbnail}
-        title={project.appName}
-      />
+      <Image src={content.logo} alt="skill" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {project.appName}
