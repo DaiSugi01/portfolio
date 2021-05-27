@@ -6,7 +6,7 @@
     "discription": "Recipe search web app.",
     "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
     "techStack": ["Java", "JavaEE", "Servlet and JSP", "MySQL", "Heroku"],
-    "thumbnail": "/images/projects/recipefy.png",
+    "thumbnail": "/images/projects/recipefy.webp",
     "url": "https://recipe-fy.herokuapp.com/",
     "github": "https://github.com/DaiSugi01/recipefy"
   },
@@ -17,7 +17,7 @@
     "discription": "iOS app to manage Cryptocurrencies.",
     "contributor": [{"name": "Yuki Tsukada", "url": "https://github.com/YukiT1990"}],
     "techStack": ["Swift"],
-    "thumbnail": "/images/projects/cryptocurrencyManager.png",
+    "thumbnail": "/images/projects/cryptocurrencyManager.webp",
     "github": "https://github.com/DaiSugi01/CryptocurrencyManagement"
   },
   {
@@ -26,7 +26,7 @@
     "appName": "Mov-Fi",
     "discription": "iOS app to find out new movies.",
     "techStack": ["Swift"],
-    "thumbnail": "/images/projects/mov.png",
+    "thumbnail": "/images/projects/mov.webp",
     "github": "https://github.com/DaiSugi01/swift_assignment/tree/main/Unit6/assignment8/CollectionView/CollectionView"
   }
 ]
