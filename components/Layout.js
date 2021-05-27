@@ -53,6 +53,8 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
         <meta property="og:site_name" content={title} />
       </Head>
 
+      <script> </script>
+
       <CustomHeader>
         <Nav className="nav">
           <Header />
