@@ -50,7 +50,8 @@ export default function SideMenu() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-300 px-3 py-2 rounded"
-        >
+          aria-label="sns"
+          >
           <GitHubIcon style={{ ...styles }} />
         </SnsIcon>
 

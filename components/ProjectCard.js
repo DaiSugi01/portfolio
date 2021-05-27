@@ -55,7 +55,7 @@ export default function ProjectCard({ project }) {
                 className="underline font-bold"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="contributor"
+                aria-label={c.url}
               >
                 {c.name}
               </a>
@@ -76,12 +76,12 @@ export default function ProjectCard({ project }) {
       </CardContent>
       <CardActions>
         {project.url && (
-          <SnsIcon href={project.url} target="_blank" rel="noopener noreferrer">
+          <SnsIcon href={project.url} target="_blank" rel="noopener noreferrer" aria-label={project.url}>
             <ArrowForwardIcon style={{...iconStyles}}/>
           </SnsIcon>
         )}
         {project.github && (
-          <SnsIcon href={project.github} target="_blank" rel="noopener noreferrer">
+          <SnsIcon href={project.github} target="_blank" rel="noopener noreferrer" aria-label={project.github}>
             <GitHubIcon  style={{...iconStyles}}/>
           </SnsIcon>
         )}
