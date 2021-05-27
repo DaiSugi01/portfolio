@@ -5,6 +5,20 @@ import Header from "./SideMenu";
 import SideMenu from "./Header";
 import profile from "../data/profile.json"
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background-color: #212529;
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+`
+
 const CustomHeader = styled.header`
   @media (max-width: 799px) {
     .nav {
@@ -40,7 +54,8 @@ const CustomMain = styled.main`
 
 export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
+    // <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
+    <Wrapper>
       <Head>
         <title>{title}</title>
         <meta content={profile.aboutMe} name="description" />
@@ -66,6 +81,6 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
         {children}
       </CustomMain>
       
-    </div>
+    </Wrapper>
   );
 }
