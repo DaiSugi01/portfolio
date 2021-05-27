@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <Card className={classes.root} style={{ ...styles }}>
-      <Image src={content.logo} alt="skill" />
+      <Image src={project.thumbnail} width="350" height="200" alt="skill" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {project.appName}
