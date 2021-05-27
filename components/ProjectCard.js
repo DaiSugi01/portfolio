@@ -49,7 +49,7 @@ export default function ProjectCard({ project }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {project.discription}
         </Typography>
-        <Typography variant="body3" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="p">
           {project.contributor && "Developed with "}
           {project.contributor &&
             project.contributor.map((c) => (
@@ -64,7 +64,7 @@ export default function ProjectCard({ project }) {
               </a>
             ))}
         </Typography>
-        <Typography variant="body4" color="textSecondary" component="p">
+        <Typography variant="body2" color="textSecondary" component="p">
           <TechStacks>
             {project.techStack &&
               project.techStack.map((tech, i) => {

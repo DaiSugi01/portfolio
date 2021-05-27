@@ -31,12 +31,8 @@ const SkillCards = styled.h2`
 
 export default function AboutMe({ programming }) {
   
-  const test = (e) => {
-    console.log(e.target.getBoundingClientRect())
-  }
-
   return (
-    <Wrapper className="bg-sub-main" onClick={test}>
+    <Wrapper className="bg-sub-main">
       <Greet>{profile.greet}</Greet>
       <Profile>{profile.aboutMe}</Profile>
 

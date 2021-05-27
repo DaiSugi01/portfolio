@@ -44,7 +44,7 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
       <Head>
         <title>{title}</title>
         <meta content={profile.aboutMe} name="description" />
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={profile.aboutMe} />
         <meta property="og:type" content="website" />
@@ -52,7 +52,7 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
         <meta property="og:image" content={"/images/avator.JPG"} />
         <meta property="og:site_name" content={title} />
       </Head>
-      
+
       <CustomHeader>
         <Nav className="nav">
           <Header />
