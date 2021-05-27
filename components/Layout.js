@@ -1,7 +1,9 @@
+import Head from "next/head";
 import styled from "styled-components";
 
 import Header from "./SideMenu";
 import SideMenu from "./Header";
+import profile from "../data/profile.json"
 
 const CustomHeader = styled.header`
   @media (max-width: 799px) {
@@ -39,7 +41,18 @@ const CustomMain = styled.main`
 export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
   return (
     <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
-      <Header />
+      <Head>
+        <title>{title}</title>
+        <meta content={profile.aboutMe} name="description" />
+        <meta charset="utf-8" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={profile.aboutMe} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={"https://www.daikisugihara.com/"} />
+        <meta property="og:image" content={"/images/avator.JPG"} />
+        <meta property="og:site_name" content={title} />
+      </Head>
+      
       <CustomHeader>
         <Nav className="nav">
           <Header />
