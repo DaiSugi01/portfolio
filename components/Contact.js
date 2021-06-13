@@ -5,22 +5,22 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { SnsIcon } from "../components/Common";
 
 import ContactForm from "../components/ContactForm";
-import { UnderLine } from "../components/Common";
+import { UnderLine, Wrapper } from "../components/Common";
 
 const styles = {
   fontSize: 40,
 };
 
-const Wrapper = styled.section`
-  height: 100%;
-  width: 100%;
-  padding: 2.5rem 0;
-  @media (max-width: 799px) {
-    .contact-form {
-      display: none;
-    }
-  }
-`;
+// const Wrapper = styled.section`
+//   height: 100%;
+//   width: 100%;
+//   padding: 2.5rem 0;
+//   @media (max-width: 799px) {
+//     .contact-form {
+//       display: none;
+//     }
+//   }
+// `;
 
 const Title = styled.h2`
   font-size: 3rem;
@@ -60,7 +60,7 @@ const SnsWrapper = styled.div`
 
 export default function Contact() {
   return (
-    <Wrapper className="bg-sub-main" id="contact">
+    <Wrapper className="bg-sub-main" id="contact" bgColor={process.env.bgMain}>
       <Title>Contact</Title>
       <UnderLine />
       <Text>Thanks for taking your time to reach me out!</Text>
