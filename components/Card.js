@@ -1,56 +1,132 @@
-import styled from "styled-components";
-
 import Image from "next/image";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 
-const CardWrapper = styled.div`
-  margin-top: 1rem;
-  margin-right: 0.25rem;
-  min-width: 320px;
-  width: 32%;
-  padding: 2rem;
-  background-color: #e5e7eb;
-`;
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    padding: "2rem",
+    margin: "1rem 0.5rem"
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: "1.875rem",
+    lineHeight: "2.25rem",
+  },
+  description: {
+    fontSize: "1.25rem",
+    lineHeight: "1.75rem",
+  },
+  subTitle: {
+    fontSize: "1.5rem",
+    lineHeight: "2rem",
+    marginTop: "0.75rem",
+    color: "#3B82F6",
+  },
+  content: {
+    marginTop: "0.5rem",
+    color: "#4B5563",
+  },
+});
 
-export default function Card({ content }) {
+export default function Cards({ content }) {
+  const classes = useStyles();
+
   return (
-    <CardWrapper className="text-center shadow-xl rounded text-gray-600">
-      <div>
+    <Card className={classes.root}>
         <Image src={content.logo} width={60} height={60} alt="skill" />
-      </div>
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h2"
+            className={classes.title}
+          >
+            {content.title}
+          </Typography>
 
-      <div className="mt-4">
-        <p className="font-bold text-black text-3xl">{content.title}</p>
-      </div>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.description}
+          >
+            {content.comment}
+          </Typography>
 
-      <div className="mt-4 text-xl">
-        <p className="">{content.comment}</p>
-        <p className="mt-3 text-blue-500 text-2xl">Languages</p>
-        {content.language.map((language) => (
-          <p key={language} className="mt-2 text-gray-600">
-            {language}
-          </p>
-        ))}
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h2"
+            className={classes.subTitle}
+          >
+            Language
+          </Typography>
 
-        {content.database && (
-          <p className="mt-3 text-blue-500 text-2xl">Database</p>
-        )}
-        {content.database &&
-          content.database.map((db) => (
-            <p key={db} className="mt-2 text-gray-600">
-              {db}
-            </p>
+          {content.language.map((language) => (
+            <Typography
+              key={language}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.description}
+            >
+              {language}
+            </Typography>
           ))}
 
-        {content.infrastructure && (
-          <p className="mt-3 text-blue-500 text-2xl">Infrastructure</p>
-        )}
-        {content.infrastructure &&
-          content.infrastructure.map((infra) => (
-            <p key={infra} className="mt-2 text-gray-600">
-              {infra}
-            </p>
-          ))}
-      </div>
-    </CardWrapper>
+          {content.database && (
+            <Typography
+              key={content.database}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.subTitle}
+            >
+              Database
+            </Typography>
+          )}
+
+          {content.database &&
+            content.database.map((database) => (
+              <Typography
+                key={database}
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                className={classes.description}
+              >
+                {database}
+              </Typography>
+            ))}
+
+          {content.infrastructure && (
+            <Typography
+              key={content.infrastructure}
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.subTitle}
+            >
+              Infrastructure
+            </Typography>
+          )}
+
+          {content.infrastructure &&
+            content.infrastructure.map((infra) => (
+              <Typography
+                key={infra}
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                className={classes.description}
+              >
+                {infra}
+              </Typography>
+            ))}
+        </CardContent>
+    </Card>
   );
 }

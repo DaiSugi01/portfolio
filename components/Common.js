@@ -1,6 +1,6 @@
 import { Box, Grid, makeStyles } from "@material-ui/core";
 
-export const Wrapper = ({ id, bgColor, ptm=0, children }) => {
+export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
   const useStyles = makeStyles((theme) => ({
     wrapper: {
       minHeight: "100vh",
@@ -9,24 +9,26 @@ export const Wrapper = ({ id, bgColor, ptm=0, children }) => {
       display: "flex",
       justifyContent: "center",
       textAlign: "center",
-      backgroundColor: {bgColor},
-      padding: `${ptm} 0`
+      backgroundColor: `${bgColor}`,
+      padding: `${ptm} 0`,
     },
   }));
-  
+
   const classes = useStyles();
-  
+
   return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      className={classes.wrapper}
-      id={id}
-    >
-      {children}
-    </Grid>
+    <Box component="section" display="block">
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        className={classes.wrapper}
+        id={id}
+      >
+        {children}
+      </Grid>
+    </Box>
   );
 };
 

@@ -1,45 +1,59 @@
 import styled from "styled-components";
+import { Box, Grid, makeStyles } from "@material-ui/core";
 
-import Card from "../components/Card";
+import Cards from "../components/Card";
 import profile from "../data/profile.json";
 import { Wrapper } from "../components/Common";
 
-const Greet = styled.h1`
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  text-align: center;
-  padding: 0 1rem;
-`;
-
-const Profile = styled.h2`
-  margin: auto;
-  margin-top: 2.5rem;
-  width: 58.333333%;
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  text-align: center;
-`;
-
-const SkillCards = styled.h2`
-  margin: auto;
-  margin-top: 3rem;
-  width: 93%;
-  flex-wrap: wrap;
-`;
+const useStyles = makeStyles((theme) => ({
+  greet: {
+    fontWeight: "700",
+    fontSize: "2.25rem",
+    lineHeight: "2.5rem",
+    textAlign: "center",
+    padding: "0 1rem"
+  },
+  profile: {
+    margin: "auto",
+    marginTop: "2.5rem",
+    width: "58.333333%",
+    textAlign: "center",
+    fontSize: "1.25rem",
+    lineHeight: "1.75rem",
+    textalign: "center"
+  },
+  skillCards: {
+    margin: "auto",
+    marginTop: "3rem",
+    // width: "93%"
+  }
+}));
 
 export default function AboutMe({ programming }) {
-  
-  return (
-    <Wrapper className="bg-sub-main" id="about" bgColor={process.env.bgMain}>
-      <Greet>{profile.greet}</Greet>
-      <Profile>{profile.aboutMe}</Profile>
+  const classes = useStyles();
 
-      <SkillCards className="flex justify-center">
+  return (
+    <Wrapper id="about" bgColor={process.env.bgSub} ptm="2.5rem">
+      <Box component="h1" className={classes.greet}>
+        {profile.greet}
+      </Box>
+
+      <Box component="h2" className={classes.profile}>
+        {profile.aboutMe}
+      </Box>
+
+      <Grid
+        container
+        item
+        xs={12} 
+        direction="row"
+        justify="center"
+        className={classes.skillCards}
+      >
         {programming &&
-          programming.map((skill) => <Card key={skill.id} content={skill} />)}
-      </SkillCards>
+          programming.map((skill) => <Cards key={skill.id} content={skill} />)}
+      </Grid>
+
     </Wrapper>
   );
 }
