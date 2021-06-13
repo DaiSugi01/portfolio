@@ -24,7 +24,7 @@
     "id": 2,
     "type": "iOS",
     "appName": "Mov-Fi",
-    "discription": "iOS app to find out new movies.",
+    "discription": "iOS app to find out new movies fetching from 'The Movie Database' API",
     "techStack": ["Swift"],
     "thumbnail": "/images/projects/mov.webp",
     "github": "https://github.com/DaiSugi01/swift_assignment/tree/main/Unit6/assignment8/CollectionView/CollectionView"

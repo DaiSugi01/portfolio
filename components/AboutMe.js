@@ -1,7 +1,6 @@
-import styled from "styled-components";
 import { Box, Grid, makeStyles } from "@material-ui/core";
 
-import Cards from "../components/Card";
+import Cards from "./Cards";
 import profile from "../data/profile.json";
 import { Wrapper } from "../components/Common";
 
@@ -14,18 +13,14 @@ const useStyles = makeStyles((theme) => ({
     padding: "0 1rem"
   },
   profile: {
-    margin: "auto",
     marginTop: "2.5rem",
     width: "58.333333%",
-    textAlign: "center",
     fontSize: "1.25rem",
     lineHeight: "1.75rem",
-    textalign: "center"
   },
   skillCards: {
     margin: "auto",
     marginTop: "3rem",
-    // width: "93%"
   }
 }));
 
