@@ -1,6 +1,6 @@
 import Head from "next/head";
-import styled from "styled-components";
-import Box from "@material-ui/core/Box";
+
+import { Box, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Header from "./SideMenu";
@@ -8,6 +8,15 @@ import SideMenu from "./Header";
 import profile from "../data/profile.json";
 
 const useStyles = makeStyles((theme) => ({
+  header: {
+    position: "absolute",
+    top: "0px",
+    left: "0px",
+
+    [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
+      display: "none",
+    },
+  },
   wrapper: {
     display: "flex",
     justifyContent: "center",
@@ -26,54 +35,18 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     position: "absolute",
     right: "0px",
-    top: "2.5rem",
+    top: "0",
     alignItems: "center",
     paddingLeft: "5rem",
 
     [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
       backgroundColor: theme.palette.secondary.main,
-      paddingLeft: "0rem"
+      paddingLeft: "0rem",
     },
   },
 }));
 
-const CustomHeader = styled.header`
-  @media (max-width: 799px) {
-    .nav {
-      display: none;
-    }
-  }
-`;
-
-const Nav = styled.div`
-  display: flex;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-`;
-
-const CustomMain = styled.main`
-  <main className="right-0 top-10">
-  display: flex;
-  flex-direction: colmn;
-  justify-content: center;
-  width: calc(100vw - 5rem);
-  min-height: calc(100vh - 3.5rem);
-  width: 100%;
-  position: absolute;
-  right: 0px;
-  top: 2.5rem;
-  align-items: center;
-
-  @media (max-width: 799px) {
-    width: 100%;
-  }
-`;
-
-export default function Layout({
-  children,
-  title = "Daiki Sugihara, Software Engineer in Vancouver",
-}) {
+export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
   const classes = useStyles();
 
   return (
@@ -92,12 +65,10 @@ export default function Layout({
 
       <script> </script>
 
-      <CustomHeader>
-        <Nav className="nav">
-          <Header />
-          <SideMenu />
-        </Nav>
-      </CustomHeader>
+      <Grid container>
+        <Header />
+        <SideMenu />
+      </Grid>
 
       <Box component="main" display="block" className={classes.main}>
         {children}

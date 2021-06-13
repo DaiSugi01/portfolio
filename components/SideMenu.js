@@ -58,7 +58,6 @@ export default function SideMenu() {
       </Box>
       <Grid 
         container
-        container
         direction="column"
         justify="center"
         alignItems="center"
