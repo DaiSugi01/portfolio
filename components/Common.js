@@ -1,4 +1,4 @@
-import { Box, Grid, makeStyles } from "@material-ui/core";
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 
 export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
   const useStyles = makeStyles(() => ({
@@ -11,7 +11,7 @@ export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
       textAlign: "center",
       backgroundColor: `${bgColor}`,
       padding: `${ptm} 0`,
-    }
+    },
   }));
 
   const classes = useStyles();
@@ -32,8 +32,6 @@ export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
   );
 };
 
-import styled from "styled-components";
-
 export const UnderLine = ({ children }) => {
   const useStyles = makeStyles((theme) => ({
     underLine: {
@@ -41,8 +39,8 @@ export const UnderLine = ({ children }) => {
       margin: "20px auto 16px",
       width: "4rem",
       borderWidth: "2px",
-      borderColor: "#FFFFFF"
-    }
+      borderColor: "#FFFFFF",
+    },
   }));
 
   const classes = useStyles();
@@ -53,23 +51,28 @@ export const UnderLine = ({ children }) => {
     </Box>
   );
 };
-// export const UnderLine = styled.div`
-//   border-style: solid;
-//   margin: 20px auto 16px;
-//   width: 4rem;
-//   border-width: 2px;
-//   --tw-border-opacity: 1;
-//   border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-// `;
 
-// export const Wrapper = styled.section`
-//   height: 100%;
-//   width: 100%;
-//   padding: 2.5rem 0;
-// `;
+export const SnsIcon = ({ children }) => {
+  const useStyles = makeStyles(() => ({
+    snsIcon: {
+      cursor: "pointer",
 
-export const SnsIcon = styled.a`
-  &:hover {
-    color: #c58753;
-  }
-`;
+      "&:hover": {
+        color: "#c58753",
+      },
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <Typography
+      gutterBottom
+      variant="h5"
+      component="a"
+      className={classes.snsIcon}
+    >
+      {children}
+    </Typography>
+  );
+};

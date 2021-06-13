@@ -17,22 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FilterWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-`;
-
-const CardWrapper = styled.div`
-  display: flex;
-  width: 95%;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
 
 export default function Project({ projects }) {
   const classes = useStyles();

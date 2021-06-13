@@ -34,19 +34,12 @@ const useStyles = makeStyles( theme => ({
   },
   snsWrapper: {
     marginBottom: "1rem"
+  },
+  icon: {
+    fontSize: 45
   }
 }));
 
-const styles = {
-  fontSize: 45,
-};
-
-const SnsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1.25rem;
-`;
 
 export default function SideMenu() {
   const classes = useStyles();
@@ -70,7 +63,7 @@ export default function SideMenu() {
           aria-label="sns"
           className={classes.snsWrapper}
           >
-          <GitHubIcon style={{ ...styles }} />
+          <GitHubIcon className={classes.icon}/>
         </SnsIcon>
 
         <SnsIcon
@@ -80,7 +73,7 @@ export default function SideMenu() {
           className="border-white text-gray-300 px-3 py-2 rounded"
           aria-label="sns"
         >
-          <LinkedInIcon style={{ ...styles }} />
+          <LinkedInIcon className={classes.icon}/>
         </SnsIcon>
       </Grid>
       </Box>
