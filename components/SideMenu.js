@@ -1,11 +1,10 @@
-import styled from "styled-components";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { SnsIcon } from "../components/Common";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Grid } from "@material-ui/core";
 
-const useStyles = makeStyles( theme => ({
+import { SnsIcon } from "../components/Common";
+import profile from "../data/profile.json";
+
+const useStyles = makeStyles((theme) => ({
   sideMenu: {
     display: "flex",
     flexDirection: "column",
@@ -19,7 +18,7 @@ const useStyles = makeStyles( theme => ({
     paddingBottom: "1.5rem",
 
     [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
-      display: "none"
+      display: "none",
     },
   },
   logo: {
@@ -30,16 +29,15 @@ const useStyles = makeStyles( theme => ({
     alignItems: "center",
     fontSize: "1.8rem",
     lineHeight: "6rem",
-    fontWeight: "700"
+    fontWeight: "700",
   },
   snsWrapper: {
-    marginBottom: "1rem"
+    marginBottom: "1rem",
   },
   icon: {
-    fontSize: 45
-  }
+    fontSize: 45,
+  },
 }));
-
 
 export default function SideMenu() {
   const classes = useStyles();
@@ -49,33 +47,20 @@ export default function SideMenu() {
       <Box component="div" className={classes.logo}>
         DS
       </Box>
-      <Grid 
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <SnsIcon
-          href="https://github.com/DaiSugi01"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-300 px-3 py-2 rounded"
-          aria-label="sns"
-          className={classes.snsWrapper}
-          >
-          <GitHubIcon className={classes.icon}/>
-        </SnsIcon>
-
-        <SnsIcon
-          href="https://www.linkedin.com/in/daiki-sugihara-97b7b7150/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="border-white text-gray-300 px-3 py-2 rounded"
-          aria-label="sns"
-        >
-          <LinkedInIcon className={classes.icon}/>
-        </SnsIcon>
+      <Grid container direction="column" justify="center" alignItems="center">
+        {profile.sns &&
+          profile.sns.map((snsItem) => (
+            <SnsIcon
+              key={snsItem.url}
+              href={snsItem.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={snsItem.name}
+              className={classes.snsWrapper}
+              snsType={snsItem.name}
+            />
+          ))}
       </Grid>
-      </Box>
+    </Box>
   );
 }

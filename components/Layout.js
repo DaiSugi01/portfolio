@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
       display: "none",
-    },
+    }
   },
   wrapper: {
     display: "flex",

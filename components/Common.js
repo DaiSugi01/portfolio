@@ -1,4 +1,7 @@
 import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
+
 
 export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
   const useStyles = makeStyles(() => ({
@@ -52,14 +55,24 @@ export const UnderLine = ({ children }) => {
   );
 };
 
-export const SnsIcon = ({ children }) => {
+export const SnsIcon = ({ snsType }) => {
   const useStyles = makeStyles(() => ({
-    snsIcon: {
+    snsIconWrapper: {
       cursor: "pointer",
+      marginBottom: "1rem",
+      color: "#D1D5DB",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
+      paddingTop: "0.5rem",
+      paddinBottom: "0.5rem",
+      borderRadius: "0.25rem",
 
       "&:hover": {
         color: "#c58753",
       },
+    },
+    icon: {
+      fontSize: "45px",
     },
   }));
 
@@ -70,9 +83,13 @@ export const SnsIcon = ({ children }) => {
       gutterBottom
       variant="h5"
       component="a"
-      className={classes.snsIcon}
+      className={classes.snsIconWrapper}
     >
-      {children}
+      {snsType === "github" ? (
+        <GitHubIcon className={classes.icon} />
+      ) : (
+        <LinkedInIcon className={classes.icon} />
+      )}
     </Typography>
   );
 };
