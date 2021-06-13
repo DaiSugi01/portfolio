@@ -1,13 +1,13 @@
-import { SnsIcon } from "../components/Common";
+import Image from "next/image";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import Image from "next/image";
 
+import { SnsIcon } from "../components/Common";
 
 const useStyles = makeStyles({
   root: {
@@ -15,24 +15,28 @@ const useStyles = makeStyles({
     margin: "1rem",
     backgroundColor: "#E5E7EB",
     transitionDuration: "300ms",
-    animation: `$slideIn 0.5s`
+    animation: `$slideIn 0.5s`,
   },
   techStacks: {
     color: "#e31b6d",
   },
   iconStyle: {
     fontSize: 35,
-  },
-  '@keyframes slideIn': {
-    '0%': {
-      opacity: 0,
-      transform: "translateY(-64px)"
-    },
-    '100%': { 
-      opacity: 1,
-      transform: "translateY(0)"
+
+    "&:hover": {
+      color: "#c58753",
     }
-  }
+  },
+  "@keyframes slideIn": {
+    "0%": {
+      opacity: 0,
+      transform: "translateY(-64px)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "translateY(0)",
+    },
+  },
 });
 
 export default function ProjectCard({ project }) {
@@ -42,11 +46,10 @@ export default function ProjectCard({ project }) {
     <Card className={classes.root}>
       <Image src={project.thumbnail} width="350" height="200" alt="skill" />
       <CardContent>
-
         <Typography gutterBottom variant="h5" component="h3">
           {project.appName}
         </Typography>
-        
+
         <Typography variant="body2" color="textSecondary" component="p">
           {project.discription}
         </Typography>
@@ -67,7 +70,7 @@ export default function ProjectCard({ project }) {
               </a>
             ))}
         </Typography>
-        
+
         <Typography
           variant="body2"
           component="span"
@@ -86,27 +89,19 @@ export default function ProjectCard({ project }) {
 
       <CardActions className={classes.snsWrapper}>
         {project.url && (
-          <SnsIcon
+          <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={project.url}
           >
-            <ArrowForwardIcon className={classes.iconStyle}/>
-          </SnsIcon>
+            <ArrowForwardIcon className={classes.iconStyle} />
+          </a>
         )}
         {project.github && (
-          <SnsIcon
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={project.github}
-          >
-            <GitHubIcon className={classes.iconStyle}/>
-          </SnsIcon>
+          <SnsIcon snsItem={{ name: "github", url: project.github }} color="black" />
         )}
       </CardActions>
-
     </Card>
   );
 }

@@ -76,15 +76,7 @@ export default function Contact() {
         >
           {profile.sns &&
             profile.sns.map((snsItem) => (
-              <SnsIcon
-                key={snsItem.url}
-                href={snsItem.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={snsItem.name}
-                className={classes.snsWrapper}
-                snsType={snsItem.name}
-              />
+              <SnsIcon key={snsItem.name} snsItem={snsItem} />
             ))}
         </Grid>
 
