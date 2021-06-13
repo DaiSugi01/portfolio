@@ -1,9 +1,40 @@
 import Head from "next/head";
 import styled from "styled-components";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
 
 import Header from "./SideMenu";
 import SideMenu from "./Header";
-import profile from "../data/profile.json"
+import profile from "../data/profile.json";
+
+const useStyles = makeStyles((theme) => ({
+  wrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    minHeight: "100vh",
+    backgroundColor: "#212529",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
+    color: "#D1D5DB",
+  },
+  main: {
+    justifyContent: "center",
+    width: "calc(100vw - 5rem)",
+    minHeight: "calc(100vh - 3.5rem)",
+    width: "100%",
+    position: "absolute",
+    right: "0px",
+    top: "2.5rem",
+    alignItems: "center",
+    paddingLeft: "10px",
+
+    [theme.breakpoints.down("sm")]: {
+      backgroundColor: theme.palette.secondary.main,
+    },
+  },
+}));
 
 const CustomHeader = styled.header`
   @media (max-width: 799px) {
@@ -38,9 +69,14 @@ const CustomMain = styled.main`
   }
 `;
 
-export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
+export default function Layout({
+  children,
+  title = "Daiki Sugihara, Software Engineer in Vancouver",
+}) {
+  const classes = useStyles();
+
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
+    <Box component="div" display="block" className={classes.wrapper}>
       <Head>
         <title>{title}</title>
         <meta content={profile.aboutMe} name="description" />
@@ -62,10 +98,9 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
         </Nav>
       </CustomHeader>
 
-      <CustomMain>
+      <Box component="main" display="block" className={classes.main}>
         {children}
-      </CustomMain>
-      
-    </div>
+      </Box>
+    </Box>
   );
 }

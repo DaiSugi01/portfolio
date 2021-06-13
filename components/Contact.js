@@ -60,7 +60,7 @@ const SnsWrapper = styled.div`
 
 export default function Contact() {
   return (
-    <Wrapper className="bg-sub-main">
+    <Wrapper className="bg-sub-main" id="contact">
       <Title>Contact</Title>
       <UnderLine />
       <Text>Thanks for taking your time to reach me out!</Text>

@@ -48,7 +48,7 @@ export default function Project({ projects }) {
   };
 
   return (
-    <Wrapper className="bg-main">
+    <Wrapper className="bg-main" id="projects">
       <div>
         <Title>Projects</Title>
         <UnderLine></UnderLine>

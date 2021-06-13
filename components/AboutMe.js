@@ -32,7 +32,7 @@ const SkillCards = styled.h2`
 export default function AboutMe({ programming }) {
   
   return (
-    <Wrapper className="bg-sub-main">
+    <Wrapper className="bg-sub-main" id="about">
       <Greet>{profile.greet}</Greet>
       <Profile>{profile.aboutMe}</Profile>
 

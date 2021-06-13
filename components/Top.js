@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 export default function Top() {
   return (
-    <Wrapper className="bg-main">
+    <Wrapper className="bg-main" id="home">
       <div>
         <p className="text-4xl">Daiki Sugihara</p>
         <p className="text-sm">iOS developer / Backend developer</p>
