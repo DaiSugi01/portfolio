@@ -1,28 +1,27 @@
-import styled from "styled-components";
+import { Box, makeStyles } from "@material-ui/core";
 
-const Button = styled.div`
-  margin: 2.5rem 5rem 0;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  width: 10rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  text-align: center;
-
-  @media (max-width: 799px) {
-    margin: 0;
-  }
-`;
 
 export default function Filter({ text, onActive, active }) {
-  const styles = {
-    backgroundColor: active ? "#E31C6E" : "",
-  };
+  const useStyles = makeStyles((theme) => ({
+    filterButton: {
+      backgroundColor: active ? "#E31C6E" : "none",
+      transitionDuration: "300ms",
+      margin: "2.5rem 0 0",
+      paddingTop: "0.5rem",
+      paddingBottom: "0.5rem",
+      width: "10rem",
+      cursor: "pointer",
+      fontSize: "1.5rem",
+      lineHeight: "2rem",
+      textAlign: "center"
+    }
+  }));
+
+  const classes = useStyles();
 
   return (
-    <Button onClick={onActive} style={{ ...styles }}>
+    <Box className={classes.filterButton} onClick={onActive}>
       {text}
-    </Button>
+    </Box>
   );
 }

@@ -1,22 +1,95 @@
-import styled from "styled-components";
+import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
-export const UnderLine = styled.div`
-  border-style: solid;
-  margin: 20px auto 16px;
-  width: 4rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
-`;
 
-export const Wrapper = styled.section`
-  height: 100%;
-  width: 100%;
-  padding: 2.5rem 0;
-`;
+export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
+  const useStyles = makeStyles(() => ({
+    wrapper: {
+      minHeight: `${id === "home" ? "100vh" : 0}`,
+      height: "100%",
+      width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      textAlign: "center",
+      backgroundColor: `${bgColor}`,
+      padding: `${ptm} 0`,
+    },
+  }));
 
-export const SnsIcon = styled.a`
-  &:hover {
-    color: #C58753;
-  }
-`;
+  const classes = useStyles();
+
+  return (
+    <Box component="section" display="block">
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        className={classes.wrapper}
+        id={id}
+      >
+        {children}
+      </Grid>
+    </Box>
+  );
+};
+
+export const UnderLine = ({ children }) => {
+  const useStyles = makeStyles((theme) => ({
+    underLine: {
+      borderStyle: "solid",
+      margin: "20px auto 16px",
+      width: "4rem",
+      borderWidth: "2px",
+      borderColor: "#FFFFFF",
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <Box component="div" display="block" className={classes.underLine}>
+      {children}
+    </Box>
+  );
+};
+
+export const SnsIcon = ({ snsType }) => {
+  const useStyles = makeStyles(() => ({
+    snsIconWrapper: {
+      cursor: "pointer",
+      marginBottom: "1rem",
+      color: "#D1D5DB",
+      paddingLeft: "0.75rem",
+      paddingRight: "0.75rem",
+      paddingTop: "0.5rem",
+      paddinBottom: "0.5rem",
+      borderRadius: "0.25rem",
+
+      "&:hover": {
+        color: "#c58753",
+      },
+    },
+    icon: {
+      fontSize: "45px",
+    },
+  }));
+
+  const classes = useStyles();
+
+  return (
+    <Typography
+      gutterBottom
+      variant="h5"
+      component="a"
+      className={classes.snsIconWrapper}
+    >
+      {snsType === "github" ? (
+        <GitHubIcon className={classes.icon} />
+      ) : (
+        <LinkedInIcon className={classes.icon} />
+      )}
+    </Typography>
+  );
+};

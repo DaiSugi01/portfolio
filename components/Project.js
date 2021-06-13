@@ -1,34 +1,26 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Box, Grid, makeStyles } from "@material-ui/core";
 
 import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
 import { Wrapper, UnderLine } from "../components/Common";
 
-const Title = styled.h2`
-  font-size: 3rem;
-  line-height: 1;
-  text-align: center;
-`;
+const useStyles = makeStyles((theme) => ({
+  title: {
+    fontSize: "3rem",
+    lineHeight: 1,
+    textAlign: "center",
+  },
+  filterWrapper: {
+    marginBottom: "3rem"
+  },
+}));
 
-const FilterWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-`;
-
-const CardWrapper = styled.div`
-  display: flex;
-  width: 95%;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
 
 export default function Project({ projects }) {
+  const classes = useStyles();
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [filteredProjects, setProjects] = useState([...projects]);
   const filters = ["All", "Web", "iOS"];
@@ -48,29 +40,43 @@ export default function Project({ projects }) {
   };
 
   return (
-    <Wrapper className="bg-main">
-      <div>
-        <Title>Projects</Title>
-        <UnderLine></UnderLine>
+    <Wrapper id="projects" bgColor={process.env.bgMain} ptm="2.5rem">
+      <Box component="h2" className={classes.title}>
+        Projects
+      </Box>
+      <UnderLine />
 
-        {/* <div className="flex justify-center text-gray-300 items-center "> */}
-        <FilterWrapper>
-          {filters.map((buttonName, i) => (
-            <Filter
-              key={i}
-              text={buttonName}
-              onActive={() => onChangeActive(i)}
-              active={i === activeIndex}
-            />
+      <Grid
+        container
+        item
+        xs={12}
+        direction="row"
+        justify="center"
+        className={classes.filterWrapper}
+      >
+        {filters.map((buttonName, i) => (
+          <Filter
+            key={i}
+            text={buttonName}
+            onActive={() => onChangeActive(i)}
+            active={i === activeIndex}
+          />
+        ))}
+      </Grid>
+
+      <Grid
+        container
+        item
+        xs={12} 
+        direction="row"
+        justify="center"
+        className={classes.skillCards}
+      >
+        {filteredProjects &&
+          filteredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
-        </FilterWrapper>
-        <CardWrapper>
-          {filteredProjects &&
-            filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-        </CardWrapper>
-      </div>
+      </Grid>
     </Wrapper>
   );
 }

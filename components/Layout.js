@@ -1,46 +1,56 @@
 import Head from "next/head";
-import styled from "styled-components";
+
+import { Box, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 import Header from "./SideMenu";
 import SideMenu from "./Header";
-import profile from "../data/profile.json"
+import profile from "../data/profile.json";
 
-const CustomHeader = styled.header`
-  @media (max-width: 799px) {
-    .nav {
-      display: none;
+const useStyles = makeStyles((theme) => ({
+  header: {
+    position: "absolute",
+    top: "0px",
+    left: "0px",
+
+    [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
+      display: "none",
     }
-  }
-`;
+  },
+  wrapper: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    minHeight: "100vh",
+    backgroundColor: "#212529",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
+    color: "#D1D5DB",
+  },
+  main: {
+    justifyContent: "center",
+    width: "calc(100vw - 5rem)",
+    minHeight: "calc(100vh - 3.5rem)",
+    width: "100%",
+    position: "absolute",
+    right: "0px",
+    top: "0",
+    alignItems: "center",
+    paddingLeft: "5rem",
 
-const Nav = styled.div`
-  display: flex;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-`;
-
-const CustomMain = styled.main`
-  <main className="right-0 top-10">
-  display: flex;
-  flex-direction: colmn;
-  justify-content: center;
-  width: calc(100vw - 5rem);
-  min-height: calc(100vh - 3.5rem);
-  width: 100%;
-  position: absolute;
-  right: 0px;
-  top: 2.5rem;
-  align-items: center;
-
-  @media (max-width: 799px) {
-    width: 100%;
-  }
-`;
+    [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
+      backgroundColor: theme.palette.secondary.main,
+      paddingLeft: "0rem",
+    },
+  },
+}));
 
 export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
+  const classes = useStyles();
+
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen text-sm font-momo bg-main text-gray-300">
+    <Box component="div" display="block" className={classes.wrapper}>
       <Head>
         <title>{title}</title>
         <meta content={profile.aboutMe} name="description" />
@@ -55,17 +65,14 @@ export default function Layout({ children, title = "Daiki Sugihara, Software Eng
 
       <script> </script>
 
-      <CustomHeader>
-        <Nav className="nav">
-          <Header />
-          <SideMenu />
-        </Nav>
-      </CustomHeader>
+      <Grid container>
+        <Header />
+        <SideMenu />
+      </Grid>
 
-      <CustomMain>
+      <Box component="main" display="block" className={classes.main}>
         {children}
-      </CustomMain>
-      
-    </div>
+      </Box>
+    </Box>
   );
 }
