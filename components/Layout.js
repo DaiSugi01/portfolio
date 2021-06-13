@@ -28,10 +28,11 @@ const useStyles = makeStyles((theme) => ({
     right: "0px",
     top: "2.5rem",
     alignItems: "center",
-    paddingLeft: "10px",
+    paddingLeft: "5rem",
 
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
       backgroundColor: theme.palette.secondary.main,
+      paddingLeft: "0rem"
     },
   },
 }));
