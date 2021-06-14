@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import { Link } from 'react-scroll';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   nav: {
     display: "flex",
     alignItems: "flex-end",
@@ -18,6 +18,12 @@ const useStyles = makeStyles(() => ({
     zIndex: "10",
     height: "3.5rem",
     width: "calc(100vw - 5rem)",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      alignItems: "center",
+      width: "100vw",
+      padding: 0,
+    }
   },
   ul: {
     display: "flex",

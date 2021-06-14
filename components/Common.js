@@ -35,7 +35,7 @@ export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
 };
 
 export const UnderLine = ({ children }) => {
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     underLine: {
       borderStyle: "solid",
       margin: "20px auto 16px",

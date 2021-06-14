@@ -4,7 +4,7 @@ import Cards from "./Cards";
 import profile from "../data/profile.json";
 import { Wrapper } from "../components/Common";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   greet: {
     fontWeight: "700",
     fontSize: "2.25rem",

@@ -13,7 +13,11 @@ export default function Filter({ text, onActive, active }) {
       cursor: "pointer",
       fontSize: "1.5rem",
       lineHeight: "2rem",
-      textAlign: "center"
+      textAlign: "center",
+
+      [theme.breakpoints.down(process.env.mobileHeader)]: {
+        width: "6rem"
+      }
     }
   }));
 
