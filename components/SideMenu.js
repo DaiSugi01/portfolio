@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.8rem",
     lineHeight: "6rem",
     fontWeight: "700",
-    color: "#3e2723"
+    color: "#3e2723",
   },
   snsWrapper: {
     marginBottom: "1rem",

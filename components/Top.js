@@ -3,7 +3,7 @@ import { Box, makeStyles } from "@material-ui/core";
 
 import { Wrapper } from "./Common";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   myName: {
     fontSize: "3rem",
     lineHeight: "3rem",
@@ -15,10 +15,9 @@ const useStyles = makeStyles((theme) => ({
   arrow: {
     fill: "white",
     fontSize: "3rem",
-    transform: "rotate(90deg)"
-  }
+    transform: "rotate(90deg)",
+  },
 }));
-
 
 export default function Top() {
   const classes = useStyles();
@@ -35,7 +34,7 @@ export default function Top() {
       </Box>
 
       <Box component="div" display="block">
-        <DoubleArrowIcon className={classes.arrow}/>
+        <DoubleArrowIcon className={classes.arrow} />
       </Box>
     </Wrapper>
   );

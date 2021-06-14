@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   formWrapper: {
     [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
       display: "none",
-    }
+    },
   },
   stylesForGrid: {
     width: "500px",
@@ -23,18 +23,18 @@ const useStyles = makeStyles((theme) => ({
     borderColor: "#E5E7EB",
   },
   submit: {
-    fontSize: "1.4rem",
+    fontSize: "1.3rem",
     color: "#D1D5DB",
     border: "0.1rem solid #D1D5DB",
-    padding: "0.8rem 4rem",
+    padding: "0.7rem 3.2rem",
     borderRadius: "3rem",
     marginTop: "2rem",
     fontWeight: "200",
     fontFamily: "monospace",
-    
+
     "&focus": {
-      outline: "none"
-    }
+      outline: "none",
+    },
   },
 }));
 
@@ -66,7 +66,8 @@ export default function ContactForm() {
 
     setLoading(true);
     setError(false);
-    fetch(new URL(baseUrl + "/sendemail"), {
+    console.log(process.env.NEXT_PUBLIC_BASE_URL)
+    fetch(new URL(process.env.NEXT_PUBLIC_BASE_URL + "/sendemail"), {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -100,7 +101,12 @@ export default function ContactForm() {
   };
 
   return (
-    <Grid container alignItems="center" justify="center" className={classes.formWrapper}>
+    <Grid
+      container
+      alignItems="center"
+      justify="center"
+      className={classes.formWrapper}
+    >
       <form id="ContactForm" action="" onSubmit={submitForm}>
         <Grid
           className="gridItems"

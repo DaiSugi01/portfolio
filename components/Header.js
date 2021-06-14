@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   nav: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "center",
       width: "100vw",
       padding: 0,
-    }
+    },
   },
   ul: {
     display: "flex",
@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 export default function Header() {
   const classes = useStyles();
   const navItems = ["Home", "About", "Projects", "Contact"];
@@ -56,9 +55,9 @@ export default function Header() {
             <Link
               activeClass="active"
               to={item.toLowerCase()}
-              spy={true} 
-              smooth={true} 
-              offset={-70} 
+              spy={true}
+              smooth={true}
+              offset={-70}
               duration={500}
             >
               {item}

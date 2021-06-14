@@ -19,21 +19,21 @@ const useStyles = makeStyles({
     animation: `$slideIn 0.5s`,
   },
   title: {
-    fontSize: "1.5rem"
+    fontSize: "1.5rem",
   },
   text: {
     color: "#263238",
-    fontSize: "1rem"
+    fontSize: "1rem",
   },
   techStacks: {
-    color: "#b71c1c"
+    color: "#b71c1c",
   },
   iconStyle: {
     fontSize: 35,
 
     "&:hover": {
       color: "#c58753",
-    }
+    },
   },
   "@keyframes slideIn": {
     "0%": {
@@ -54,15 +54,30 @@ export default function ProjectCard({ project }) {
     <Card className={classes.root}>
       <Image src={project.thumbnail} width="350" height="200" alt="skill" />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h3" className={classes.title}>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h3"
+          className={classes.title}
+        >
           {project.appName}
         </Typography>
 
-        <Typography variant="body2" color="textSecondary" component="p" className={classes.text}>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          className={classes.text}
+        >
           {project.discription}
         </Typography>
 
-        <Typography variant="body2" color="textSecondary" component="p" className={classes.text}>
+        <Typography
+          variant="body2"
+          color="textSecondary"
+          component="p"
+          className={classes.text}
+        >
           {project.contributor && "Developed with "}
           {project.contributor &&
             project.contributor.map((c) => (
@@ -107,7 +122,10 @@ export default function ProjectCard({ project }) {
           </a>
         )}
         {project.github && (
-          <SnsIcon snsItem={{ name: "github", url: project.github }} color="black" />
+          <SnsIcon
+            snsItem={{ name: "github", url: project.github }}
+            color="black"
+          />
         )}
       </CardActions>
     </Card>
