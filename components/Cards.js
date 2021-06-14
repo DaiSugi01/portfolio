@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     lineHeight: "2.25rem",
   },
   description: {
+    color: "#263238",
     fontSize: "1.25rem",
     lineHeight: "1.75rem",
   },
@@ -23,12 +24,9 @@ const useStyles = makeStyles({
     fontSize: "1.5rem",
     lineHeight: "2rem",
     marginTop: "0.75rem",
-    color: "#3B82F6",
-  },
-  content: {
-    marginTop: "0.5rem",
-    color: "#4B5563",
-  },
+    color: "#01579b",
+    fontWeight: 500
+  }
 });
 
 export default function Cards({ content }) {

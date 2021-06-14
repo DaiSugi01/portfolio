@@ -86,6 +86,7 @@ export const SnsIcon = ({ snsItem, color="#D1D5DB" }) => {
       href={snsItem.url}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={snsItem.name}
       alt={snsItem.name}
     >
       {snsItem.name === "github" ? (
