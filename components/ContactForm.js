@@ -6,7 +6,6 @@ import { TextField, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, Box } from "@material-ui/core";
 
-import { baseUrl } from "../lib/commonInfo";
 import CircularIndeterminate from "../components/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
