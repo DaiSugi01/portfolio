@@ -66,7 +66,7 @@ export default function ContactForm() {
 
     setLoading(true);
     setError(false);
-    console.log(process.env.NEXT_PUBLIC_BASE_URL)
+
     fetch(new URL(process.env.NEXT_PUBLIC_BASE_URL + "/sendemail"), {
       method: "POST",
       body: JSON.stringify({
