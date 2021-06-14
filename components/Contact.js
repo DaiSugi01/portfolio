@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: "1.1rem",
     textAlign: "center",
-    margin: "2rem auto 3rem",
+    margin: "0.5rem auto 1.5rem",
     fontWeight: "400",
   },
   contactInfoWrapper: {
