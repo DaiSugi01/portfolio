@@ -1,43 +1,52 @@
+import fetch from "node-fetch";
 import { useState } from "react";
 import Router from "next/router";
-import { TextField, Input } from "@material-ui/core";
+
+import { TextField, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import styled from "styled-components";
-import fetch from "node-fetch";
+import { makeStyles, Box } from "@material-ui/core";
 
 import { baseUrl } from "../lib/commonInfo";
 import CircularIndeterminate from "../components/CircularProgress";
 
-const stylesForGrid = {
-  width: "500px",
-  backgroundColor: "#E5E7EB",
-  marginBottom: "0.1rem",
-  maxWidth: "100%",
-};
-
-const stylesForSubmit = {
-  outline: "none",
-  padding: "5px 30px",
-  color: "white",
-  fontSize: "1.3rem",
-  display: "inline-block",
-};
-
-const SubmitWrapper = styled.div`
-  text-align: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 1rem;
-`;
+const useStyles = makeStyles((theme) => ({
+  formWrapper: {
+    [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
+      display: "none",
+    }
+  },
+  stylesForGrid: {
+    width: "500px",
+    backgroundColor: "#E5E7EB",
+    marginBottom: "0.1rem",
+    maxWidth: "100%",
+    borderColor: "#E5E7EB",
+  },
+  submit: {
+    fontSize: "1.4rem",
+    color: "#D1D5DB",
+    border: "0.1rem solid #D1D5DB",
+    padding: "0.8rem 4rem",
+    borderRadius: "3rem",
+    marginTop: "2rem",
+    fontWeight: "200",
+    fontFamily: "monospace",
+    
+    "&focus": {
+      outline: "none"
+    }
+  },
+}));
 
 export default function ContactForm() {
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
+  const classes = useStyles();
 
   let submit = (
-    <SubmitWrapper>
-      <Input type="submit" value="Submit" style={{ ...stylesForSubmit }} />
-    </SubmitWrapper>
+    <Button type="submit" variant="outlined" className={classes.submit}>
+      Submit
+    </Button>
   );
 
   if (isLoading) {
@@ -81,9 +90,9 @@ export default function ContactForm() {
   };
 
   const formValidation = (email) => {
-    const regex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const regex =
+      /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!regex.test(email)) {
-      console.log("format error");
       return false;
     } else {
       return true;
@@ -91,19 +100,29 @@ export default function ContactForm() {
   };
 
   return (
-    <Grid container alignItems="center" justify="center">
+    <Grid container alignItems="center" justify="center" className={classes.formWrapper}>
       <form id="ContactForm" action="" onSubmit={submitForm}>
-        <Grid className="gridItems" item md={12} style={{ ...stylesForGrid }}>
+        <Grid
+          className="gridItems"
+          item
+          md={12}
+          className={classes.stylesForGrid}
+        >
           <TextField
             required
             fullWidth
             id="MailAddress"
             label="Email address"
-            variant="outlined"
+            variant="filled"
             color="secondary"
           />
         </Grid>
-        <Grid className="gridItems" item md={12} style={{ ...stylesForGrid }}>
+        <Grid
+          className="gridItems"
+          item
+          md={12}
+          className={classes.stylesForGrid}
+        >
           <TextField
             required
             fullWidth
@@ -111,14 +130,18 @@ export default function ContactForm() {
             multiline
             id="Contact"
             label="Your message"
-            variant="outlined"
+            variant="filled"
             color="secondary"
           />
         </Grid>
 
         {isError ? (
           <p className="text-center text-red-500 font-bold">
-            Oops! Something went wrong. Plase try again
+            Oops! Something went wrong. <br />
+            Please check your email address is correct and your message field is
+            filled.
+            <br />
+            Then try again.
           </p>
         ) : (
           ""

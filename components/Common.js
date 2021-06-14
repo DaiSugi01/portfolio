@@ -2,7 +2,6 @@ import { Box, Grid, makeStyles, Typography } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-
 export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
   const useStyles = makeStyles(() => ({
     wrapper: {
@@ -36,7 +35,7 @@ export const Wrapper = ({ id, bgColor, ptm = 0, children }) => {
 };
 
 export const UnderLine = ({ children }) => {
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     underLine: {
       borderStyle: "solid",
       margin: "20px auto 16px",
@@ -55,12 +54,12 @@ export const UnderLine = ({ children }) => {
   );
 };
 
-export const SnsIcon = ({ snsType }) => {
+export const SnsIcon = ({ snsItem, color="#D1D5DB" }) => {
   const useStyles = makeStyles(() => ({
     snsIconWrapper: {
       cursor: "pointer",
       marginBottom: "1rem",
-      color: "#D1D5DB",
+      color: `${color}`,
       paddingLeft: "0.75rem",
       paddingRight: "0.75rem",
       paddingTop: "0.5rem",
@@ -84,8 +83,12 @@ export const SnsIcon = ({ snsType }) => {
       variant="h5"
       component="a"
       className={classes.snsIconWrapper}
+      href={snsItem.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      alt={snsItem.name}
     >
-      {snsType === "github" ? (
+      {snsItem.name === "github" ? (
         <GitHubIcon className={classes.icon} />
       ) : (
         <LinkedInIcon className={classes.icon} />

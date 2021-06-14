@@ -1,5 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, makeStyles } from "@material-ui/core";
 
 import { SnsIcon } from "../components/Common";
 import profile from "../data/profile.json";
@@ -51,13 +50,9 @@ export default function SideMenu() {
         {profile.sns &&
           profile.sns.map((snsItem) => (
             <SnsIcon
-              key={snsItem.url}
-              href={snsItem.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={snsItem.name}
+              key={snsItem.name}
               className={classes.snsWrapper}
-              snsType={snsItem.name}
+              snsItem={snsItem}
             />
           ))}
       </Grid>

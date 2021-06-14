@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import styled from "styled-components";
 import { makeStyles, Grid, Typography } from "@material-ui/core";
 
 import { SnsIcon } from "../components/Common";
@@ -17,11 +16,22 @@ const useStyles = makeStyles((theme) => ({
   text: {
     fontSize: "1.1rem",
     textAlign: "center",
-    margin: "2rem auto 3rem",
+    margin: "0.5rem auto 1.5rem",
     fontWeight: "400",
   },
   contactInfoWrapper: {
     marginTop: "2rem",
+  },
+  contactInfo: {
+    marginTop: "0.5rem",
+  },
+  contactImage: {
+    padding: "0.75rem 0.5rem",
+  },
+  contactText: {
+    padding: "0.5rem",
+    fontSize: "1.25rem",
+    lineHeight: "1.75rem",
   },
   snsWrapper: {
     margin: "auto",
@@ -30,15 +40,8 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  icon: {
-    fontSize: 40,
-  },
 }));
 
-const ContactInfo = styled.div`
-  display: flex;
-  margin-top: 0.5rem;
-`;
 
 export default function Contact() {
   const classes = useStyles();
@@ -76,42 +79,34 @@ export default function Contact() {
         >
           {profile.sns &&
             profile.sns.map((snsItem) => (
-              <SnsIcon
-                key={snsItem.url}
-                href={snsItem.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={snsItem.name}
-                className={classes.snsWrapper}
-                snsType={snsItem.name}
-              />
+              <SnsIcon key={snsItem.name} snsItem={snsItem} />
             ))}
         </Grid>
 
         <a href="tel:+1-236-888-7246" aria-label="phone">
-          <ContactInfo>
+          <Grid container direction="row" className={classes.contactInfo}>
             <Image
-              className="px-3 py-2"
+              className={classes.contactImage}
               src="/images/contacts/phone.svg"
               width={35}
               height={35}
               alt="phone"
             />
-            <p className="px-2 py-2 text-xl">+1 (236) 888 7246</p>
-          </ContactInfo>
+            <p className={classes.contactText}>+1 (236) 888 7246</p>
+          </Grid>
         </a>
 
         <a href="mailto:volble124@gmail.com" aria-label="mail">
-          <ContactInfo>
+          <Grid container direction="row" className={classes.contactInfo}>
             <Image
-              className="px-3 py-2"
+              className={classes.contactImage}
               src="/images/contacts/mail.svg"
               width={25}
               height={25}
               alt="mail"
             />
-            <p className="px-2 py-2 text-xl">volble124@gmail.com</p>
-          </ContactInfo>
+            <p className={classes.contactText}>volble124@gmail.com</p>
+          </Grid>
         </a>
       </Grid>
     </Wrapper>
