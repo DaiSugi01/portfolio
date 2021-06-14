@@ -9,6 +9,10 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     margin: "auto",
     marginTop: "4rem",
+    height: "100vh"
+  },
+  inner: {
+
   },
   thanks: {
     fontWeight: 700,
@@ -38,6 +42,7 @@ const AboutMe = () => {
 
   return (
     <Box component="div" className={classes.wrapper}>
+      <Box component="div" className={classes.inner}>
       <Image
         src="/images/contacts/mailbox.svg"
         width={250}
@@ -58,7 +63,8 @@ const AboutMe = () => {
           Back to home
         </Button>
       </Link>
-    </Box>
+      </Box>
+          </Box>
   );
 };
 
