@@ -1,7 +1,5 @@
 import Box from "@material-ui/core/Box";
-import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
 import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 
 export default function Header() {
   const classes = useStyles();

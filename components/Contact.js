@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-import styled from "styled-components";
-import { makeStyles, Box, Grid, Typography } from "@material-ui/core";
+import { makeStyles, Grid, Typography } from "@material-ui/core";
 
 import { SnsIcon } from "../components/Common";
 import ContactForm from "../components/ContactForm";
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2rem",
   },
   contactInfo: {
-    marginTop: "0.5rem"
+    marginTop: "0.5rem",
   },
   contactImage: {
     padding: "0.75rem 0.5rem",
@@ -32,21 +31,17 @@ const useStyles = makeStyles((theme) => ({
   contactText: {
     padding: "0.5rem",
     fontSize: "1.25rem",
-    lineHeight: "1.75rem"
+    lineHeight: "1.75rem",
   },
   snsWrapper: {
     margin: "auto",
 
     [theme.breakpoints.up(process.env.mobileBreakPoint)]: {
-      display: "none"
-    }
-  }
+      display: "none",
+    },
+  },
 }));
 
-const ContactInfo = styled.div`
-  display: flex;
-  margin-top: 0.5rem;
-`;
 
 export default function Contact() {
   const classes = useStyles();
@@ -102,7 +97,7 @@ export default function Contact() {
         </a>
 
         <a href="mailto:volble124@gmail.com" aria-label="mail">
-          <ContactInfo>
+          <Grid container direction="row" className={classes.contactInfo}>
             <Image
               className={classes.contactImage}
               src="/images/contacts/mail.svg"
@@ -111,7 +106,7 @@ export default function Contact() {
               alt="mail"
             />
             <p className={classes.contactText}>volble124@gmail.com</p>
-          </ContactInfo>
+          </Grid>
         </a>
       </Grid>
     </Wrapper>

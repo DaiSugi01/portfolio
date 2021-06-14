@@ -1,13 +1,24 @@
 import Link from "next/link";
-import Button from "@material-ui/core/Button";
 import Image from "next/image";
+
+import {Button, Box, makeStyles} from "@material-ui/core";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  text-align: center;
-  margin: auto;
-  margin-top: 4rem;
-`;
+
+const useStyles = makeStyles(() => ({
+  wrapper: {
+    textAlign: "center",
+    margin: "auto",
+    marginTop: "4rem"
+  }
+}));
+
+
+// const Wrapper = styled.div`
+//   text-align: center;
+//   margin: auto;
+//   margin-top: 4rem;
+// `;
 
 const ThanksMessage = styled.h1`
   margin-top: 3rem;
@@ -27,9 +38,11 @@ const styles = {
 };
 
 const AboutMe = () => {
-
+  const classes = useStyles();
+  
   return (
-    <Wrapper className="align-center text-center m-auto mt-16">
+    <Box component="div" className={classes.wrapper}>
+    {/* <Wrapper className="align-center text-center m-auto mt-16"> */}
       <Image
         src="/images/contacts/mailbox.svg"
         width={250}
@@ -47,7 +60,7 @@ const AboutMe = () => {
           Back to home
         </Button>
       </Link>
-    </Wrapper>
+    </Box>
   );
 };
 

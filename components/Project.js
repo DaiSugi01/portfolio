@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import { Box, Grid, makeStyles } from "@material-ui/core";
 
 import Filter from "../components/Filter";
