@@ -1,6 +1,5 @@
 import { Box, makeStyles } from "@material-ui/core";
 
-
 export default function Filter({ text, onActive, active }) {
   const useStyles = makeStyles((theme) => ({
     filterButton: {
@@ -16,9 +15,9 @@ export default function Filter({ text, onActive, active }) {
       textAlign: "center",
 
       [theme.breakpoints.down(process.env.mobileHeader)]: {
-        width: "6rem"
-      }
-    }
+        width: "6rem",
+      },
+    },
   }));
 
   const classes = useStyles();

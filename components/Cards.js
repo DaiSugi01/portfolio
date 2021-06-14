@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -16,19 +17,17 @@ const useStyles = makeStyles({
     lineHeight: "2.25rem",
   },
   description: {
-    fontSize: "1.25rem",
-    lineHeight: "1.75rem",
+    color: "#263238",
+    fontSize: "1.15rem",
+    lineHeight: "1.6rem",
   },
   subTitle: {
     fontSize: "1.5rem",
     lineHeight: "2rem",
     marginTop: "0.75rem",
-    color: "#3B82F6",
-  },
-  content: {
-    marginTop: "0.5rem",
-    color: "#4B5563",
-  },
+    color: "#01579b",
+    fontWeight: 500
+  }
 });
 
 export default function Cards({ content }) {
