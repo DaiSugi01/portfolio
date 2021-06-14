@@ -1,62 +1,60 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import {Button, Box, makeStyles} from "@material-ui/core";
-import styled from "styled-components";
+import { Button, Box, makeStyles, Typography } from "@material-ui/core";
 
 
 const useStyles = makeStyles(() => ({
   wrapper: {
     textAlign: "center",
     margin: "auto",
-    marginTop: "4rem"
+    marginTop: "4rem",
+  },
+  thanks: {
+    fontWeight: 700,
+    fontSize: "2.25rem",
+    lineHeight: "2.5rem",
+    marginTop: "3rem"
+  },
+  resText: {
+    fontSize: "1.5rem",
+    lineHeight: "2rem",
+    fontWeight: 100,
+    marginTop: "1.25rem",
+    marginBottom: "2.5rem"
+  },
+  backButton: {
+    borderRadius: "3rem",
+    borderWidth: "4px",
+    outline: "none",
+    padding: "10px 20px",
+    fontSize: "1rem"
   }
 }));
 
 
-// const Wrapper = styled.div`
-//   text-align: center;
-//   margin: auto;
-//   margin-top: 4rem;
-// `;
-
-const ThanksMessage = styled.h1`
-  margin-top: 3rem;
-`;
-
-const Message = styled.h2`
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
-`;
-
-const styles = {
-  borderRadius: "3rem",
-  borderWidth: "4px",
-  outline: "none",
-  padding: "10px 20px",
-  fontSize: "1rem;",
-};
-
 const AboutMe = () => {
   const classes = useStyles();
-  
+
   return (
     <Box component="div" className={classes.wrapper}>
-    {/* <Wrapper className="align-center text-center m-auto mt-16"> */}
       <Image
         src="/images/contacts/mailbox.svg"
         width={250}
         height={250}
         alt="Mailbox"
       />
-      <ThanksMessage className="font-bold text-4xl">
+
+      <Typography variant="h5" component="h2" className={classes.thanks}>
         Thanks, Message received!
-      </ThanksMessage>
-      <Message className="font-thin text-2xl">
+      </Typography>
+      
+      <Typography variant="h5" component="h3" className={classes.resText}>
         I'll be in touch with you shortly.
-      </Message>
+      </Typography>
+
       <Link href="/">
-        <Button variant="outlined" color="primary" style={{ ...styles }}>
+        <Button variant="outlined" color="primary" className={classes.backButton}>
           Back to home
         </Button>
       </Link>
