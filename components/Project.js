@@ -5,17 +5,16 @@ import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
 import { Wrapper, UnderLine } from "../components/Common";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   title: {
     fontSize: "3rem",
     lineHeight: 1,
     textAlign: "center",
   },
   filterWrapper: {
-    marginBottom: "3rem"
+    marginBottom: "3rem",
   },
 }));
-
 
 export default function Project({ projects }) {
   const classes = useStyles();
@@ -66,7 +65,7 @@ export default function Project({ projects }) {
       <Grid
         container
         item
-        xs={12} 
+        xs={12}
         direction="row"
         justify="center"
         className={classes.skillCards}

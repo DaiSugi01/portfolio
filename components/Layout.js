@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down(process.env.mobileBreakPoint)]: {
       display: "none",
-    }
+    },
   },
   wrapper: {
     display: "flex",
@@ -46,7 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout({ children, title = "Daiki Sugihara, Software Engineer in Vancouver" }) {
+export default function Layout({
+  children,
+  title = "Daiki Sugihara, Software Engineer in Vancouver",
+}) {
   const classes = useStyles();
 
   return (
