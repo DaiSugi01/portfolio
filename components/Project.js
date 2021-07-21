@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Grid, makeStyles } from "@material-ui/core";
+import { Box, Card, Grid, makeStyles } from "@material-ui/core";
 
 import Filter from "../components/Filter";
 import ProjectCard from "../components/ProjectCard";
@@ -12,8 +12,23 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
   },
   filterWrapper: {
-    marginBottom: "3rem",
+    marginBottom: "2rem",
   },
+  card: {
+    backgroundColor: "#212529",
+    height: "50vw",
+    minHeight: "400px",
+    width: "90%",
+    color: "#69696a",
+    marginBottom: "2.22vw",
+    overflow: "scroll",
+    padding: "2.22vw",
+    fontSize: "1.4vw",
+  },
+  skillCards: {
+    maxWidth: "95%",
+    margin: "auto"
+  }
 }));
 
 export default function Project({ projects }) {
@@ -62,11 +77,13 @@ export default function Project({ projects }) {
         ))}
       </Grid>
 
+      <Card className={classes.card}>
+
       <Grid
         container
         item
-        xs={12}
-        direction="row"
+        xs={8}
+        direction="column"
         justify="center"
         className={classes.skillCards}
       >
@@ -75,6 +92,7 @@ export default function Project({ projects }) {
             <ProjectCard key={project.id} project={project} />
           ))}
       </Grid>
+      </Card>
     </Wrapper>
   );
 }

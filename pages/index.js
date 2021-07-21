@@ -22,6 +22,8 @@ export async function getStaticProps() {
   const programming = skills.filter((skill) => skill.type == "programming");
 
   const projects = await getAllProjects();
+  projects.sort((a, b) => b.id - a.id);
+
   return {
     props: { programming, projects },
   };
