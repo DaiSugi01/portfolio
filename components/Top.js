@@ -3,20 +3,32 @@ import { Box, makeStyles } from "@material-ui/core";
 
 import { Wrapper } from "./Common";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   myName: {
     fontSize: "3rem",
     lineHeight: "3rem",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      fontSize: "2rem",
+    }
   },
   jobTitle: {
     fontSize: "1.1rem",
     lineHeight: "1.8rem",
+  },
+  box: {
+    marginTop: "0.5rem",
+    animation: `$spin infinite 1.2s`,
   },
   arrow: {
     fill: "white",
     fontSize: "3rem",
     transform: "rotate(90deg)",
   },
+  "@keyframes spin": {
+    "0%": { transform: "translateY(0px)" },
+    "100%": { transform: "translateY(10px)" },
+  }
 }));
 
 export default function Top() {
@@ -33,7 +45,7 @@ export default function Top() {
         </Box>
       </Box>
 
-      <Box component="div" display="block">
+      <Box component="div" display="block" className={classes.box}>
         <DoubleArrowIcon className={classes.arrow} />
       </Box>
     </Wrapper>

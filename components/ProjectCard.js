@@ -10,7 +10,7 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import { SnsIcon } from "../components/Common";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     marginBottom: "1.5rem",
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   text: {
     color: "#263238",
     fontSize: "1rem",
-    marginTop: "1rem"
+    marginTop: "1rem",
   },
   techStackWrapper: {
     maxWidth: "100%",
@@ -41,6 +41,10 @@ const useStyles = makeStyles({
     color: "black",
     margin: "0.3rem",
     opacity: "0.9",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      fontSize: "0.7rem",
+    }
   },
   thumbnailWrapper: {
     maxWidth: "100%",
@@ -66,7 +70,7 @@ const useStyles = makeStyles({
       transform: "translateY(0)",
     },
   },
-});
+}));
 
 export default function ProjectCard({ project }) {
   const classes = useStyles();
@@ -95,7 +99,7 @@ export default function ProjectCard({ project }) {
               <Typography
                 variant="body2"
                 component="div"
-                key={i}
+                key={tech + i}
                 className={classes.techStacks}
               >
                 {tech}
@@ -115,7 +119,7 @@ export default function ProjectCard({ project }) {
             project.thumbnails.map((thumbnail, i) => {
               if (project.type === "iOS") {
                 return (
-                  <div style={{ margin: "0 1rem 0.2rem" }}>
+                  <div key={thumbnail} style={{ margin: "0 1rem 0.2rem" }}>
                     <Image
                       src={thumbnail}
                       width="180"
@@ -151,25 +155,29 @@ export default function ProjectCard({ project }) {
         <Typography
           variant="body2"
           color="textSecondary"
-          component="p"
+          component="div"
           className={classes.text}
         >
           {project.contributor && "Developed with "}
           {project.contributor &&
             project.contributor.map((c, i) => (
-              <>
-              <a
-                key={c.name}
-                href={c.url}
-                className="underline font-bold"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={c.url}
-              >
-                {c.name}
-              </a>
-              {i < project.contributor.length - 1 ? <span> and </span> : ""}
-              </>
+              <div key={c.name + i}>
+                <a
+                  key={c.name}
+                  href={c.url}
+                  className="underline font-bold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={c.url}
+                >
+                  {c.name}
+                </a>
+                {i < project.contributor.length - 1 ? (
+                  <span key={c.href}> and </span>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
         </Typography>
       </CardContent>

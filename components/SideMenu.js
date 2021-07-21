@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 import { Box, Grid, makeStyles } from "@material-ui/core";
 
 import { SnsIcon } from "../components/Common";
@@ -30,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "6rem",
     fontWeight: "700",
     color: "#3e2723",
+    cursor: "pointer",
   },
   snsWrapper: {
     marginBottom: "1rem",
@@ -45,7 +48,16 @@ export default function SideMenu() {
   return (
     <Box component="nav" className={classes.sideMenu}>
       <Box component="div" className={classes.logo}>
-        DS
+        <Link
+          activeClass="active"
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          DS
+        </Link>
       </Box>
       <Grid container direction="column" justify="center" alignItems="center">
         {profile.sns &&

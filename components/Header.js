@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "calc(1rem * var(--tw-space-x-reverse))",
     marginLeft: " calc(1rem * calc(1 - var(--tw-space-x-reverse)))",
     color: "#D1D5DB",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      fontSize: "1rem",
+    },
   },
   li: {
     paddingLeft: " 0.75rem",
