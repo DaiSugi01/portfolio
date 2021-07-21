@@ -4,19 +4,29 @@ import Cards from "./Cards";
 import profile from "../data/profile.json";
 import { Wrapper } from "../components/Common";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   greet: {
     fontWeight: "700",
     fontSize: "2.25rem",
     lineHeight: "2.5rem",
     textAlign: "center",
-    padding: "0 1rem"
+    padding: "0 1rem",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      fontSize: "2rem"
+    },
+
   },
   profile: {
     marginTop: "2.5rem",
     width: "58.333333%",
     fontSize: "1.25rem",
     lineHeight: "1.75rem",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      width: "90%",
+      fontSize: "1.1rem"
+    },
   },
   skillCards: {
     margin: "auto",
