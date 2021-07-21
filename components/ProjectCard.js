@@ -4,29 +4,54 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import { Grid } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 import { SnsIcon } from "../components/Common";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
-    margin: "1rem",
+    width: "100%",
+    marginBottom: "1.5rem",
     color: "#263238",
-    backgroundColor: "#E5E7EB",
+    backgroundColor: "#FFFFFF",
     transitionDuration: "300ms",
     animation: `$slideIn 0.5s`,
+    boxShadow: "0 10px 25px 0 rgb(255, 255, 255, 0.4)",
   },
   title: {
     fontSize: "1.5rem",
+    fontWeight: "bold",
   },
   text: {
     color: "#263238",
     fontSize: "1rem",
+    marginTop: "1rem",
+  },
+  techStackWrapper: {
+    maxWidth: "100%",
+    justifyContent: "center",
+    marginBottom: "1rem",
   },
   techStacks: {
-    color: "#b71c1c",
+    backgroundColor: "#E0E2FF",
+    padding: "0.5rem 1rem",
+    borderRadius: "7px",
+    color: "black",
+    margin: "0.3rem",
+    opacity: "0.9",
+
+    [theme.breakpoints.down(process.env.mobileHeader)]: {
+      fontSize: "0.7rem",
+    }
+  },
+  thumbnailWrapper: {
+    maxWidth: "100%",
+    justifyContent: "center",
+  },
+  thumbnail: {
+    margin: "1rem",
   },
   iconStyle: {
     fontSize: 35,
@@ -45,14 +70,13 @@ const useStyles = makeStyles({
       transform: "translateY(0)",
     },
   },
-});
+}));
 
 export default function ProjectCard({ project }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <Image src={project.thumbnail} width="350" height="200" alt="skill" />
       <CardContent>
         <Typography
           gutterBottom
@@ -62,6 +86,62 @@ export default function ProjectCard({ project }) {
         >
           {project.appName}
         </Typography>
+        <Grid
+          container
+          item
+          xs={3}
+          direction="row"
+          justify="center"
+          className={classes.techStackWrapper}
+        >
+          {project.techStack &&
+            project.techStack.map((tech, i) => (
+              <Typography
+                variant="body2"
+                component="div"
+                key={tech + i}
+                className={classes.techStacks}
+              >
+                {tech}
+              </Typography>
+            ))}
+        </Grid>
+
+        <Grid
+          container
+          item
+          xs={3}
+          direction="row"
+          justify="center"
+          className={classes.thumbnailWrapper}
+        >
+          {project.thumbnails &&
+            project.thumbnails.map((thumbnail, i) => {
+              if (project.type === "iOS") {
+                return (
+                  <div key={thumbnail} style={{ margin: "0 1rem 0.2rem" }}>
+                    <Image
+                      src={thumbnail}
+                      width="180"
+                      height="360"
+                      alt="skill"
+                      key={i}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <Image
+                    src={thumbnail}
+                    width="650"
+                    height="360"
+                    alt="skill"
+                    key={i}
+                  />
+                );
+              }
+            })}
+        </Grid>
 
         <Typography
           variant="body2"
@@ -75,38 +155,30 @@ export default function ProjectCard({ project }) {
         <Typography
           variant="body2"
           color="textSecondary"
-          component="p"
+          component="div"
           className={classes.text}
         >
           {project.contributor && "Developed with "}
           {project.contributor &&
-            project.contributor.map((c) => (
-              <a
-                key={c.name}
-                href={c.url}
-                className="underline font-bold"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={c.url}
-              >
-                {c.name}
-              </a>
+            project.contributor.map((c, i) => (
+              <div key={c.name + i}>
+                <a
+                  key={c.name}
+                  href={c.url}
+                  className="underline font-bold"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={c.url}
+                >
+                  {c.name}
+                </a>
+                {i < project.contributor.length - 1 ? (
+                  <span key={c.href}> and </span>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
-        </Typography>
-
-        <Typography
-          variant="body2"
-          component="span"
-          className={classes.techStacks}
-        >
-          {project.techStack &&
-            project.techStack.map((tech, i) => {
-              if (i === project.techStack.length - 1) {
-                return tech;
-              } else {
-                return tech + ", ";
-              }
-            })}
         </Typography>
       </CardContent>
 

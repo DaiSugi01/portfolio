@@ -29,10 +29,14 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "3rem",
     marginTop: "2rem",
     fontWeight: "200",
-    fontFamily: "monospace",
+    fontFamily: "Roboto",
 
-    "&focus": {
+    "&:focus": {
       outline: "none",
+    },
+
+    "&:hover": {
+      fontSize: "1.5rem",
     },
   },
 }));

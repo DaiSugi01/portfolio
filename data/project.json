@@ -1,32 +1,95 @@
 [
   {
-    "id": 0,
+    "id": 1,
+    "type": "iOS",
+    "appName": "Mov-Fi",
+    "discription": "iOS app to find out new movies fetching from 'The Movie Database' API",
+    "techStack": [
+      "Swift"
+    ],
+    "thumbnails": [
+      "/images/projects/Mov1.webp",
+      "/images/projects/Mov2.webp"
+    ],
+    "github": "https://github.com/DaiSugi01/swift_assignment/tree/main/Unit6/assignment8/CollectionView/CollectionView"
+  },
+  {
+    "id": 2,
     "type": "Web",
     "appName": "Recipefy",
     "discription": "Recipe search web app.",
-    "contributor": [{"name": "Ayumi Tanaka", "url": "https://ayumitanaka.net/index.html"}],
-    "techStack": ["Java", "JavaEE", "Servlet and JSP", "MySQL", "Heroku"],
-    "thumbnail": "/images/projects/recipefy.webp",
+    "contributor": [
+      {
+        "name": "Ayumi Tanaka",
+        "url": "https://ayumitanaka.net/index.html"
+      }
+    ],
+    "techStack": [
+      "Java",
+      "JavaEE",
+      "Servlet and JSP",
+      "MySQL",
+      "Heroku"
+    ],
+    "thumbnails": [
+      "/images/projects/recipefy.webp"
+    ],
     "url": "https://recipe-fy.herokuapp.com/",
     "github": "https://github.com/DaiSugi01/recipefy"
   },
   {
-    "id": 1,
+    "id": 1000,
     "type": "iOS",
-    "appName": "Cryptocurrency Manager",
-    "discription": "iOS app to manage Cryptocurrencies.",
-    "contributor": [{"name": "Yuki Tsukada", "url": "https://github.com/YukiT1990"}],
-    "techStack": ["Swift"],
-    "thumbnail": "/images/projects/cryptocurrencyManager.webp",
-    "github": "https://github.com/DaiSugi01/CryptocurrencyManagement"
+    "appName": "Queen's game",
+    "discription": "Published iOS app to manage Cryptocurrencies.",
+    "contributor": [
+      {
+        "name": "Takayasu Nasu",
+        "url": "https://github.com/TakayasuNasu"
+      },
+      {
+        "name": "Takayuki Yamaguchi",
+        "url": "https://github.com/cookie777"
+      }
+    ],
+    "techStack": [
+      "Swift",
+      "Realm",
+      "RxSwift",
+      "MVVM"
+    ],
+    "thumbnails": [
+      "/images/projects/Queensgame1.webp",
+      "/images/projects/Queensgame2.webp"
+    ],
+    "url": "https://apps.apple.com/us/app/queens-game/id1575671780",
+    "github": "https://github.com/DaiSugi01/Queens-game"
   },
   {
-    "id": 2,
-    "type": "iOS",
-    "appName": "Mov-Fi",
-    "discription": "iOS app to find out new movies fetching from 'The Movie Database' API",
-    "techStack": ["Swift"],
-    "thumbnail": "/images/projects/mov.webp",
-    "github": "https://github.com/DaiSugi01/swift_assignment/tree/main/Unit6/assignment8/CollectionView/CollectionView"
+    "id": 1001,
+    "type": "Web",
+    "appName": "DP Code Acaemy",
+    "discription": "A web-based educational platform. I worked as a Project Manager / Full Stack Engineer",
+    "contributor": [
+      {
+        "name": "6 Frontend Developers and 3 Backend developers",
+        "url": "https://github.com/DPCodeAcademy"
+      }
+    ],
+    "techStack": [
+      "Python",
+      "AWS",
+      "Serverless Architecture",
+      "APIGateway",
+      "Lambda",
+      "DynamoDB",
+      "SES",
+      "Next.js"
+    ],
+    "thumbnails": [
+      "/images/projects/DPCode.webp"
+    ],
+    "url": "https://dpcode.academy/",
+    "github": "https://github.com/DPCodeAcademy"
   }
 ]

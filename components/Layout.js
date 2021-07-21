@@ -3,8 +3,8 @@ import Head from "next/head";
 import { Box, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import Header from "./SideMenu";
-import SideMenu from "./Header";
+import SideMenu from "./SideMenu";
+import Header from "./Header";
 import profile from "../data/profile.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -69,8 +69,8 @@ export default function Layout({
       <script> </script>
 
       <Grid container>
-        <Header />
         <SideMenu />
+        <Header />
       </Grid>
 
       <Box component="main" display="block" className={classes.main}>
