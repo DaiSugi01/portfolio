@@ -51,7 +51,7 @@ export default function Layout({
   title = "Daiki Sugihara, Software Engineer in Vancouver",
 }) {
   const classes = useStyles();
-
+ 
   return (
     <Box component="div" display="block" className={classes.wrapper}>
       <Head>
