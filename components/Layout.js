@@ -72,7 +72,7 @@ export default function Layout({
         <SideMenu />
         <Header />
       </Grid>
-
+ 
       <Box component="main" display="block" className={classes.main}>
         {children}
       </Box>
