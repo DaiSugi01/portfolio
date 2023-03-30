@@ -4,5 +4,9 @@
   "logo": "/images/skills/ios.svg",
   "title": "iOS",
   "comment": "I passionate about iOS development. Smartphone is essential for our life that's why I would like to make life easier by developing apps.",
-  "language": ["Swift", "Realm", "Objective-C"]
+  "language": [
+    "Swift",
+    "Realm",
+    "Objective-C"
+  ]
 }

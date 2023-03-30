@@ -4,7 +4,26 @@
   "logo": "/images/skills/backend.png",
   "title": "Back-end",
   "comment": "A backend journey is going to be a long way but I really love developing backend",
-  "language": ["Java", "vb.net", "Python", "Django", "Ruby", "Ruby on Rails", "SQL"],
-  "database": ["Microsoft SQL Server", "DB2", "MySQL", "Amazon DynamoDB"],
-  "infrastructure": ["AWS (SAA Expires Jun 2022)", "Firebase", "Heroku"]
+  "language": [
+    "Golang",
+    "Java",
+    "Python",
+    "vb.NET",
+    "SQL"
+  ],
+  "database": [
+    "Microsoft SQL Server",
+    "DB2",
+    "MySQL",
+    "Amazon DynamoDB",
+    "Redis"
+  ],
+  "infrastructure": [
+    "Github Actions",
+    "Terraform",
+    "GCP",
+    "AWS (SAA Expires Jun 2022)",
+    "Firebase",
+    "Heroku"
+  ]
 }
