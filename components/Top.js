@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down(process.env.mobileHeader)]: {
       fontSize: "2rem",
-    }
+    },
   },
   jobTitle: {
     fontSize: "1.1rem",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   "@keyframes spin": {
     "0%": { transform: "translateY(0px)" },
     "100%": { transform: "translateY(10px)" },
-  }
+  },
 }));
 
 export default function Top() {
@@ -41,7 +41,7 @@ export default function Top() {
           Daiki Sugihara
         </Box>
         <Box component="p" display="block" className={classes.jobTitle}>
-          iOS developer / Backend developer
+          Backend developer
         </Box>
       </Box>
 
