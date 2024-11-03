@@ -41,7 +41,7 @@ export default function Top() {
           Daiki Sugihara
         </Box>
         <Box component="p" display="block" className={classes.jobTitle}>
-          Backend developer
+          Web designer / Backend developer
         </Box>
       </Box>
 
