@@ -95,7 +95,7 @@ export default function Contact() {
           </Grid>
         </a>
 
-        <a href="mailto:daiki.sugihara.dev@gmail.com" aria-label="mail">
+        <a href="mailto:daisugi124van@gmail.com" aria-label="mail">
           <Grid container direction="row" className={classes.contactInfo}>
             <Image
               className={classes.contactImage}
@@ -104,7 +104,7 @@ export default function Contact() {
               height={25}
               alt="mail"
             />
-            <p className={classes.contactText}>daiki.sugihara.dev@gmail.com</p>
+            <p className={classes.contactText}>daisugi124van@gmail.com</p>
           </Grid>
         </a>
       </Grid>
